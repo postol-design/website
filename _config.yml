@@ -1,0 +1,8 @@
+# GitHub Pages: the site is plain static HTML; Jekyll only copies it.
+# Working files that must not be published:
+exclude:
+  - CLAUDE.md
+  - seo/
+  - dist/
+  - .claude/
+include: []

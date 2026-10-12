@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interior Rendering Services for Designers | Svetlana Postol</title>
+<meta name="description" content="Interior renderings, 2D and 3D floor plans and axonometric views for designers and architects. Hand-finished over a precise 3D model, from $170 per view.">
+<meta name="theme-color" content="#272524">
+<link rel="canonical" href="https://postol.design/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://postol.design/">
+<meta property="og:site_name" content="Svetlana Postol">
+<meta property="og:title" content="Interior &amp; Architectural Rendering for Designers | Svetlana Postol">
+<meta property="og:description" content="Visuals that get your design approved faster. Interior and exterior renderings, floor plans and axonometric views, from $170 per view.">
+<meta property="og:image" content="https://postol.design/images/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Instrument+Serif:ital@1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://postol.design/#business","name":"Svetlana Postol — Interior & Architectural Visualization","url":"https://postol.design/","logo":"https://postol.design/apple-touch-icon.png","image":"https://postol.design/images/orbit-dining.jpg","email":"hello@postol.design","description":"Interior and exterior renderings, 2D and 3D floor plans, axonometric views, site plans and elevations for interior designers and architects. Built on a precise 3D model and finished by hand.","priceRange":"$170–$250 per view","areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Australia"}],"founder":{"@id":"https://postol.design/about.html#person"},"sameAs":["https://www.instagram.com/postol.design/","https://www.linkedin.com/in/svitlana-postol/","https://www.pinterest.com/postoldesign/"],"knowsAbout":["Interior rendering","Architectural visualization","3D floor plan rendering","2D floor plan rendering","Axonometric view","Site plan rendering","Elevation rendering"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Rendering services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Interior rendering"},"price":"210","priceCurrency":"USD","description":"Per view"},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Exterior rendering"},"price":"230","priceCurrency":"USD","description":"Per view"},{"@type":"Offer","itemOffered":{"@type":"Service","name":"2D floor plan rendering"},"price":"170","priceCurrency":"USD","description":"Up to 1,075 sq ft (100 m²)"},{"@type":"Offer","itemOffered":{"@type":"Service","name":"3D floor plan rendering"},"price":"180","priceCurrency":"USD","description":"Up to 1,075 sq ft (100 m²)"},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Axonometric view"},"price":"180","priceCurrency":"USD","description":"1–2 rooms"},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Site and landscape plan"},"price":"180","priceCurrency":"USD","description":"Up to 4,300 sq ft (400 m²)"},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Elevation rendering"},"price":"170","priceCurrency":"USD","description":"Per facade view"}]}},{"@type":"WebSite","@id":"https://postol.design/#website","url":"https://postol.design/","name":"Svetlana Postol","publisher":{"@id":"https://postol.design/#business"},"inLanguage":"en"}]}</script>
+
+<!-- GA4: the Google Analytics tag goes here (after launch) -->
+<!-- Meta Pixel: goes here if ads are run -->
+</head>
+<body>
+<!-- layout:top -->
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<canvas id="ink" aria-hidden="true"></canvas>
+<div id="pen" aria-hidden="true"></div>
+
+<header class="site-header" id="top">
+  <div class="wrap hdr">
+    <a class="logo" href="./" aria-label="Svetlana Postol">Svetlana Postol</a>
+    <nav class="nav" aria-label="Main">
+      <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+      <div class="nav-dd"><a href="services.html" aria-haspopup="true"><span data-i18n="nav.services">Services &amp; Pricing</span><svg class="dd-i" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></a><div class="nav-sub"><a class="nav-sub-all" href="services.html" data-i18n="nav.all">All services &amp; pricing</a><a href="floor-plan-rendering.html" data-i18n="nav.fp">Floor plan rendering</a><a href="axonometric-views.html" data-i18n="nav.axo">Axonometric views</a></div></div>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="hdr-r">
+      <div class="social social--hdr"><a href="https://www.instagram.com/postol.design/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg></a></div>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a class="btn btn--sm" href="contact.html"><span data-i18n="cta.start">Start a project</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+    </div>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <nav aria-label="Mobile">
+    <a href="./" data-i18n="nav.home">Home</a>
+    <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="services.html" data-i18n="nav.services">Services &amp; Pricing</a>
+    <a class="mm-sub" href="floor-plan-rendering.html" data-i18n="nav.fp">Floor plan rendering</a>
+    <a class="mm-sub" href="axonometric-views.html" data-i18n="nav.axo">Axonometric views</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div class="mm-foot">
+    <div class="social"><a href="https://www.instagram.com/postol.design/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="https://wa.me/380683511246" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3.5 20.5l1.5-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.6c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c.6 1.2 1.6 2.1 2.8 2.7l.6-.5c.2-.1.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.5.8-.6.3-1.4.4-2.3.1-2.4-.8-4.4-2.8-5.2-5.2-.2-.8-.2-1.6.1-2.2z" fill="currentColor" stroke="none"/></svg></a></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+    <a class="btn" href="contact.html"><span data-i18n="cta.start">Start a project</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+  </div>
+</div>
+
+<!-- /layout:top -->
+<main id="main">
+
+<!-- 1. HERO: fan of large photos (click to enlarge) -->
+<section class="hero" id="hero" aria-labelledby="h1">
+  <div class="hero-bg" aria-hidden="true"><canvas id="dots" class="hero-dots"></canvas></div>
+  <div class="fan" id="fan">
+    <button type="button" class="fc" data-i="0" aria-label="Enlarge image 1 of 5"><span class="fc-in"><img src="images/hero-master-bath.jpg" srcset="images/w/hero-master-bath-600.webp 600w, images/w/hero-master-bath-1200.webp 1200w, images/hero-master-bath.jpg 2000w" sizes="(max-width: 760px) 520px, 1000px" alt="Primary bathroom rendering with a long double vanity, wood mirrors and a freestanding tub" style="object-position:38% 55%;transform-origin:38% 55%" width="2000" height="987"></span></button>
+    <button type="button" class="fc" data-i="1" aria-label="Enlarge image 2 of 5"><span class="fc-in"><img src="images/hero-dining.jpg" srcset="images/w/hero-dining-600.webp 600w, images/w/hero-dining-1200.webp 1200w, images/hero-dining.jpg 2000w" sizes="(max-width: 760px) 520px, 1000px" alt="Dining room rendering with a wood ceiling, an oak table and white upholstered chairs" style="object-position:48% 62%;transform-origin:48% 62%" width="2000" height="1410"></span></button>
+    <button type="button" class="fc" data-i="2" aria-label="Enlarge image 3 of 5"><span class="fc-in"><img src="images/hero-dark-bath.jpg" srcset="images/w/hero-dark-bath-600.webp 600w, images/w/hero-dark-bath-1200.webp 1200w, images/hero-dark-bath.jpg 2000w" sizes="(max-width: 760px) 520px, 1000px" alt="Bathroom rendering with dark stone walls, black pendant lamps and a freestanding tub" style="object-position:100% 45%;transform-origin:100% 45%" width="2000" height="1497" fetchpriority="high"></span></button>
+    <button type="button" class="fc" data-i="3" aria-label="Enlarge image 4 of 5"><span class="fc-in"><img src="images/hero-kitchen.jpg" srcset="images/w/hero-kitchen-600.webp 600w, images/w/hero-kitchen-1200.webp 1200w, images/hero-kitchen.jpg 2000w" sizes="(max-width: 760px) 520px, 1000px" alt="Kitchen rendering with a blue tile range hood niche and rattan counter stools" style="object-position:46% 52%;transform-origin:46% 52%" width="2000" height="1639"></span></button>
+    <button type="button" class="fc" data-i="4" aria-label="Enlarge image 5 of 5"><span class="fc-in"><img src="images/hero-kids-bedroom.jpg" srcset="images/w/hero-kids-bedroom-600.webp 600w, images/w/hero-kids-bedroom-1200.webp 1200w, images/hero-kids-bedroom.jpg 2000w" sizes="(max-width: 760px) 520px, 1000px" alt="Girl's bedroom rendering with a hanging rattan chair and a pink armchair" style="object-position:34% 58%;transform-origin:34% 58%" width="2000" height="1272"></span></button>
+  </div>
+  <div class="hero-copy">
+    <!-- the keyword line is part of the H1 for search; the slogan stays the visual headline -->
+    <h1 id="h1" class="hero-h1">
+      <span class="eyebrow rise-in" style="animation-delay:1.5s" data-i18n="hero.eyebrow">Interior &amp; Architectural Rendering Services</span>
+      <span class="hero-slogan rise-in" style="animation-delay:1.65s" data-i18n="hero.h1">See the space <span class="hl"><span class="ital">before it exists</span><svg class="ul" viewBox="0 0 240 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 8 C 40 2, 90 12, 140 5 S 205 9, 238 3"/></svg></span>.</span>
+    </h1>
+    <div class="hero-low">
+      <p class="sub rise-in" style="animation-delay:1.8s" data-i18n="hero.sub">Interior and exterior renderings, floor plans and axonometric views for interior designers and architects. Built on a precise 3D model from your drawings, finished by hand. <b>From $170 per view, ready in up to 3 days.</b></p>
+      <div class="hero-cta rise-in" style="animation-delay:1.95s">
+        <a class="btn" href="#contact"><span data-i18n="hero.b2">Discuss your project</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+        <a class="btn btn--line" href="#work"><span data-i18n="hero.b1">View work</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. HAND + NUMBERS -->
+<section class="section stats" aria-label="Facts">
+  <div class="wrap">
+    <div class="badge rise"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-4L17 4l3 3L8 19z"/><path d="M14 7l3 3"/></svg><span data-i18n="badge">No AI. Drawn by hand over a precise 3D model.</span></div>
+    <div class="stat-row">
+      <div class="stat rise"><span class="tag">01</span><b data-count="15" data-suffix="+">15+</b><span class="l" data-i18n="st1">years in design</span></div>
+      <div class="stat rise"><span class="tag">02</span><b data-count="10" data-suffix="+">10+</b><span class="l" data-i18n="st2">countries</span></div>
+      <div class="stat rise"><span class="tag">03</span><b data-count="500" data-suffix="+">500+</b><span class="l" data-i18n="st3">renders delivered</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PARALLAX PHOTO + SERVICES: the photo stays pinned and the Services block slides over it -->
+<div class="plx-wrap">
+<figure class="wide-photo wide-photo--pano" style="--w:2000;--h:873">
+  <!-- hallway render (Svetlana's web export, 2000px) -->
+  <img src="images/parallax-hall.jpg" alt="Interior rendering of an upper hallway with a built-in bar niche and lit bookshelves" width="2000" height="873" loading="lazy">
+  <figcaption class="photo-cap" data-i18n="cap.hall">Upper hallway with a bar niche · Residence, Australia · Interior rendering</figcaption>
+</figure>
+
+<div class="slide-wrap"><!-- Services stay put at the end, Selected projects slide over them -->
+<!-- 4. SERVICES -->
+<section class="section slide-under" id="services" aria-labelledby="sv">
+  <div class="wrap">
+    <div class="svc-head rise">
+      <div><span class="label" data-i18n="svc.label">[ Services ]</span><h2 class="h2" id="sv" data-i18n="svc.h2">Rendering services <span class="ital">&amp; pricing</span></h2></div>
+      <a class="btn btn--line" href="#process"><span data-i18n="svc.btn">How I work</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+    </div>
+    <div class="sx" id="sx">
+    <div class="sx-tabs" role="tablist" aria-label="Services">
+      <button type="button" class="sx-tab on" role="tab" id="sxt0" aria-controls="sxp0" aria-selected="true" tabindex="0"><span class="num">/01</span><span class="nm" data-i18n="v1n">Interior Renderings</span></button>
+      <button type="button" class="sx-tab" role="tab" id="sxt1" aria-controls="sxp1" aria-selected="false" tabindex="-1"><span class="num">/02</span><span class="nm" data-i18n="v2n">Exterior &amp; Architectural Renderings</span></button>
+      <button type="button" class="sx-tab" role="tab" id="sxt2" aria-controls="sxp2" aria-selected="false" tabindex="-1"><span class="num">/03</span><span class="nm" data-i18n="v3n">2D Floor Plan Rendering</span></button>
+      <button type="button" class="sx-tab" role="tab" id="sxt3" aria-controls="sxp3" aria-selected="false" tabindex="-1"><span class="num">/04</span><span class="nm" data-i18n="v4n">3D Floor Plan Rendering</span></button>
+      <button type="button" class="sx-tab" role="tab" id="sxt4" aria-controls="sxp4" aria-selected="false" tabindex="-1"><span class="num">/05</span><span class="nm" data-i18n="v5n">Axonometric Views</span></button>
+      <button type="button" class="sx-tab" role="tab" id="sxt5" aria-controls="sxp5" aria-selected="false" tabindex="-1"><span class="num">/06</span><span class="nm" data-i18n="v6n">Site Plans &amp; Landscape Plans</span></button>
+      <button type="button" class="sx-tab" role="tab" id="sxt6" aria-controls="sxp6" aria-selected="false" tabindex="-1"><span class="num">/07</span><span class="nm" data-i18n="v7n">Elevations &amp; Sections</span></button>
+    </div>
+    <div class="sx-panels">
+      <div class="sx-panel on" role="tabpanel" id="sxp0" aria-labelledby="sxt0" data-i="0">
+        <div class="sx-media">
+          <div class="sx-view"><div class="sx-track"><button type="button" class="sx-sl" aria-label="Open photo 1"><img src="images/services/sx-interior-1.jpg" srcset="images/w/services-sx-interior-1-900.webp 900w, images/w/services-sx-interior-1-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" loading="lazy" alt="Interior rendering of a dining room with green velvet chairs and a sideboard" width="1600" height="1189" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 2"><img src="images/services/sx-interior-2.jpg" srcset="images/w/services-sx-interior-2-900.webp 900w, images/w/services-sx-interior-2-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Interior rendering of a kitchen with an island, arched windows and pendant lights" width="1600" height="1204" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 3"><img src="images/services/sx-interior-3.jpg" srcset="images/w/services-sx-interior-3-900.webp 900w, images/w/services-sx-interior-3-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Interior rendering of a bedroom with a curved headboard and a chandelier" width="1600" height="1178" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 4"><img src="images/services/sx-interior-4.jpg" srcset="images/w/services-sx-interior-4-900.webp 900w, images/w/services-sx-interior-4-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Interior rendering of a bathroom with a freestanding tub and a glass shower" width="1475" height="1600" loading="lazy" decoding="async"></button></div></div>
+          <div class="sx-nav"><span class="sv-cnt">1 / 4</span><span class="sv-arrows"><button type="button" class="sv-prev" aria-label="Previous photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M6.5 3.5 2 8l4.5 4.5"/></svg></button><button type="button" class="sv-next" aria-label="Next photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9.5 3.5 14 8l-4.5 4.5"/></svg></button></span></div>
+        </div>
+        <div class="sx-info">
+          <p class="sv-line" data-i18n="l1">Show clients the finished room, with its materials, light and mood, before anything is built.</p>
+          <div class="sx-meta"><div><span class="sx-k" data-i18n="sx.price">Price</span><b data-i18n="p1">from $210 / view</b></div><div><span class="sx-k" data-i18n="sx.note">Note</span><b data-i18n="f1">Extended view (a second zone): $250 · Commercial interiors: $250</b></div><div><span class="sx-k" data-i18n="sx.time">Delivery</span><b data-i18n="sx.t2">Up to 3 days · +1 day per extra angle</b></div></div>
+          <a class="btn btn--accent sv-order" href="#contact" data-t="1"><span data-i18n="sv.order">Get a quote</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+          <a class="sx-ex" href="portfolio.html#more" data-i18n="sx.ex">See examples →</a>
+        </div>
+      </div>
+      <div class="sx-panel" role="tabpanel" id="sxp1" aria-labelledby="sxt1" data-i="1">
+        <div class="sx-media">
+          <div class="sx-view"><div class="sx-track"><button type="button" class="sx-sl" aria-label="Open photo 1"><img src="images/services/sx-exterior-1.jpg" srcset="images/w/services-sx-exterior-1-900.webp 900w, images/w/services-sx-exterior-1-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Exterior rendering of a white stucco house with a wooden garage door" width="1600" height="1131" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 2"><img src="images/services/sx-exterior-2.jpg" srcset="images/w/services-sx-exterior-2-900.webp 900w, images/w/services-sx-exterior-2-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Exterior rendering of a dark barn-style house with garages" width="1600" height="780" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 3"><img src="images/services/sx-exterior-3.jpg" srcset="images/w/services-sx-exterior-3-900.webp 900w, images/w/services-sx-exterior-3-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Exterior rendering of a white house with a pool and a pool house" width="1600" height="895" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 4"><img src="images/services/sx-exterior-4.jpg" srcset="images/w/services-sx-exterior-4-900.webp 900w, images/w/services-sx-exterior-4-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Exterior rendering of a modern house with wood cladding and a carport" width="1600" height="1123" loading="lazy" decoding="async"></button></div></div>
+          <div class="sx-nav"><span class="sv-cnt">1 / 4</span><span class="sv-arrows"><button type="button" class="sv-prev" aria-label="Previous photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M6.5 3.5 2 8l4.5 4.5"/></svg></button><button type="button" class="sv-next" aria-label="Next photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9.5 3.5 14 8l-4.5 4.5"/></svg></button></span></div>
+        </div>
+        <div class="sx-info">
+          <p class="sv-line" data-i18n="l2">Present the building in its setting, so proportions and materials get approved faster.</p>
+          <div class="sx-meta"><div><span class="sx-k" data-i18n="sx.price">Price</span><b data-i18n="p2">from $230 / view</b></div><div><span class="sx-k" data-i18n="sx.time">Delivery</span><b data-i18n="sx.t2">Up to 3 days · +1 day per extra angle</b></div></div>
+          <a class="btn btn--accent sv-order" href="#contact" data-t="2"><span data-i18n="sv.order">Get a quote</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+          <a class="sx-ex" href="portfolio.html#more-exterior" data-i18n="sx.ex">See examples →</a>
+        </div>
+      </div>
+      <div class="sx-panel sx-panel--fit" role="tabpanel" id="sxp2" aria-labelledby="sxt2" data-i="2">
+        <div class="sx-media">
+          <div class="sx-view"><div class="sx-track"><button type="button" class="sx-sl" aria-label="Open photo 1"><img src="images/services/sx-plan-2d-1.jpg" srcset="images/w/services-sx-plan-2d-1-900.webp 900w, images/w/services-sx-plan-2d-1-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="2D color floor plan with a garage, kitchen and living area" width="1600" height="1131" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 2"><img src="images/services/sx-plan-2d-2.jpg" srcset="images/w/services-sx-plan-2d-2-900.webp 900w, images/w/services-sx-plan-2d-2-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="2D color floor plan of a primary suite with a bathroom" width="1600" height="1120" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 3"><img src="images/services/sx-plan-2d-3.jpg" srcset="images/w/services-sx-plan-2d-3-900.webp 900w, images/w/services-sx-plan-2d-3-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="2D color floor plan of a house with a round dining bay" width="1600" height="1336" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 4"><img src="images/services/sx-plan-2d-4.jpg" srcset="images/w/services-sx-plan-2d-4-900.webp 900w, images/w/services-sx-plan-2d-4-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="2D color floor plan of a family home" width="1600" height="1131" loading="lazy" decoding="async"></button></div></div>
+          <div class="sx-nav"><span class="sv-cnt">1 / 4</span><span class="sv-arrows"><button type="button" class="sv-prev" aria-label="Previous photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M6.5 3.5 2 8l4.5 4.5"/></svg></button><button type="button" class="sv-next" aria-label="Next photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9.5 3.5 14 8l-4.5 4.5"/></svg></button></span></div>
+        </div>
+        <div class="sx-info">
+          <p class="sv-line" data-i18n="l3">A plan clients read at a glance: furniture, flooring and materials in color.</p>
+          <div class="sx-meta"><div><span class="sx-k" data-i18n="sx.price">Price</span><b data-i18n="p3">from $170 · up to 1,075 sq ft (100 m²)</b></div><div><span class="sx-k" data-i18n="sx.note">Note</span><b data-i18n="f3">+$1 per extra m² (10.8 sq ft) · Architectural plan: $180</b></div><div><span class="sx-k" data-i18n="sx.time">Delivery</span><b data-i18n="sx.t2">Up to 3 days · +1 day per extra angle</b></div></div>
+          <a class="btn btn--accent sv-order" href="#contact" data-t="3"><span data-i18n="sv.order">Get a quote</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+          <a class="sx-ex" href="portfolio.html#more-plan" data-i18n="sx.ex">See examples →</a>
+        </div>
+      </div>
+      <div class="sx-panel sx-panel--fit" role="tabpanel" id="sxp3" aria-labelledby="sxt3" data-i="3">
+        <div class="sx-media">
+          <div class="sx-view"><div class="sx-track"><button type="button" class="sx-sl" aria-label="Open photo 1"><img src="images/services/sx-plan-3d-1.jpg" srcset="images/w/services-sx-plan-3d-1-900.webp 900w, images/w/services-sx-plan-3d-1-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="3D floor plan of an apartment with three bedrooms" width="1600" height="1190" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 2"><img src="images/services/sx-plan-3d-2.jpg" srcset="images/w/services-sx-plan-3d-2-900.webp 900w, images/w/services-sx-plan-3d-2-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="3D floor plan of an apartment with a bedroom and a living area" width="1600" height="1367" loading="lazy" decoding="async"></button></div></div>
+          <div class="sx-nav"><span class="sv-cnt">1 / 2</span><span class="sv-arrows"><button type="button" class="sv-prev" aria-label="Previous photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M6.5 3.5 2 8l4.5 4.5"/></svg></button><button type="button" class="sv-next" aria-label="Next photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9.5 3.5 14 8l-4.5 4.5"/></svg></button></span></div>
+        </div>
+        <div class="sx-info">
+          <p class="sv-line" data-i18n="l4">The whole layout in volume: walls, furniture and zones, seen from above.</p>
+          <div class="sx-meta"><div><span class="sx-k" data-i18n="sx.price">Price</span><b data-i18n="p4">from $180 · up to 1,075 sq ft (100 m²)</b></div><div><span class="sx-k" data-i18n="sx.note">Note</span><b data-i18n="f4">+$1 per extra m² (10.8 sq ft)</b></div><div><span class="sx-k" data-i18n="sx.time">Delivery</span><b data-i18n="sx.t2">Up to 3 days · +1 day per extra angle</b></div></div>
+          <a class="btn btn--accent sv-order" href="#contact" data-t="4"><span data-i18n="sv.order">Get a quote</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+          <a class="sx-ex" href="portfolio.html#more-plan" data-i18n="sx.ex">See examples →</a>
+        </div>
+      </div>
+      <div class="sx-panel sx-panel--fit" role="tabpanel" id="sxp4" aria-labelledby="sxt4" data-i="4">
+        <div class="sx-media">
+          <div class="sx-view"><div class="sx-track"><button type="button" class="sx-sl" aria-label="Open photo 1"><img src="images/services/sx-axo-1.jpg" srcset="images/w/services-sx-axo-1-900.webp 900w, images/w/services-sx-axo-1-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Axonometric view of a living, dining and kitchen area" width="1600" height="1056" loading="lazy" decoding="async"></button><button type="button" class="sx-sl sx-sl--cover" aria-label="Open photo 2"><img src="images/services/sx-axo-2.jpg" srcset="images/w/services-sx-axo-2-900.webp 900w, images/w/services-sx-axo-2-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Axonometric view of a rooftop terrace with loungers" width="1600" height="1202" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 3"><img src="images/services/sx-axo-3.jpg" srcset="images/w/services-sx-axo-3-900.webp 900w, images/w/services-sx-axo-3-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Axonometric view of a modern house on its site" width="1600" height="1145" loading="lazy" decoding="async"></button><button type="button" class="sx-sl sx-sl--gray" aria-label="Open photo 4"><img src="images/services/sx-axo-4.jpg" srcset="images/w/services-sx-axo-4-900.webp 900w, images/w/services-sx-axo-4-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Axonometric view of a teenager's bedroom with a desk" width="1600" height="1461" loading="lazy" decoding="async"></button></div></div>
+          <div class="sx-nav"><span class="sv-cnt">1 / 4</span><span class="sv-arrows"><button type="button" class="sv-prev" aria-label="Previous photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M6.5 3.5 2 8l4.5 4.5"/></svg></button><button type="button" class="sv-next" aria-label="Next photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9.5 3.5 14 8l-4.5 4.5"/></svg></button></span></div>
+        </div>
+        <div class="sx-info">
+          <p class="sv-line" data-i18n="l5">Show how rooms connect, without perspective distortion.</p>
+          <div class="sx-meta"><div><span class="sx-k" data-i18n="sx.price">Price</span><b data-i18n="p5">from $180 · 1–2 rooms</b></div><div><span class="sx-k" data-i18n="sx.note">Note</span><b data-i18n="f5">3+ rooms: $210</b></div><div><span class="sx-k" data-i18n="sx.time">Delivery</span><b data-i18n="sx.t2">Up to 3 days · +1 day per extra angle</b></div></div>
+          <a class="btn btn--accent sv-order" href="#contact" data-t="5"><span data-i18n="sv.order">Get a quote</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+          <a class="sx-ex" href="portfolio.html#more-axo" data-i18n="sx.ex">See examples →</a>
+        </div>
+      </div>
+      <div class="sx-panel" role="tabpanel" id="sxp5" aria-labelledby="sxt5" data-i="5">
+        <div class="sx-media">
+          <div class="sx-view"><div class="sx-track"><button type="button" class="sx-sl" aria-label="Open photo 1"><img src="images/services/sx-site-1.jpg" srcset="images/w/services-sx-site-1-900.webp 900w, images/w/services-sx-site-1-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Site plan with a house, a pool and a garden" width="1600" height="1408" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 2"><img src="images/services/sx-site-2.jpg" srcset="images/w/services-sx-site-2-900.webp 900w, images/w/services-sx-site-2-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Site plan of a house among trees with a driveway" width="1600" height="1225" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 3"><img src="images/services/sx-site-3.jpg" srcset="images/w/services-sx-site-3-900.webp 900w, images/w/services-sx-site-3-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Site plan of a row of townhouses with pools" width="1600" height="1027" loading="lazy" decoding="async"></button></div></div>
+          <div class="sx-nav"><span class="sv-cnt">1 / 3</span><span class="sv-arrows"><button type="button" class="sv-prev" aria-label="Previous photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M6.5 3.5 2 8l4.5 4.5"/></svg></button><button type="button" class="sv-next" aria-label="Next photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9.5 3.5 14 8l-4.5 4.5"/></svg></button></span></div>
+        </div>
+        <div class="sx-info">
+          <p class="sv-line" data-i18n="l6">Buildings, landscape and paths in one illustrated view, from a single lot to a community.</p>
+          <div class="sx-meta"><div><span class="sx-k" data-i18n="sx.price">Price</span><b data-i18n="p6">from $180 · up to 4,300 sq ft (400 m²)</b></div><div><span class="sx-k" data-i18n="sx.note">Note</span><b data-i18n="f6">Larger sites quoted individually</b></div><div><span class="sx-k" data-i18n="sx.time">Delivery</span><b data-i18n="sx.t2">Up to 3 days · +1 day per extra angle</b></div></div>
+          <a class="btn btn--accent sv-order" href="#contact" data-t="6"><span data-i18n="sv.order">Get a quote</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+          <a class="sx-ex" href="portfolio.html#more-plan" data-i18n="sx.ex">See examples →</a>
+        </div>
+      </div>
+      <div class="sx-panel" role="tabpanel" id="sxp6" aria-labelledby="sxt6" data-i="6">
+        <div class="sx-media">
+          <div class="sx-view"><div class="sx-track"><button type="button" class="sx-sl" aria-label="Open photo 1"><img src="images/services/sx-elevation-1.jpg" srcset="images/w/services-sx-elevation-1-900.webp 900w, images/w/services-sx-elevation-1-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Facade elevation of a modern house with planting" width="1600" height="854" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 2"><img src="images/services/sx-elevation-2.jpg" srcset="images/w/services-sx-elevation-2-900.webp 900w, images/w/services-sx-elevation-2-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Facade elevation of a market building" width="1600" height="964" loading="lazy" decoding="async"></button><button type="button" class="sx-sl" aria-label="Open photo 3"><img src="images/services/sx-elevation-3.jpg" srcset="images/w/services-sx-elevation-3-900.webp 900w, images/w/services-sx-elevation-3-1600.webp 1600w" sizes="(max-width: 900px) 84vw, 50vw" alt="Kitchen wall elevation with a range hood and a blue refrigerator" width="1600" height="1099" loading="lazy" decoding="async"></button></div></div>
+          <div class="sx-nav"><span class="sv-cnt">1 / 3</span><span class="sv-arrows"><button type="button" class="sv-prev" aria-label="Previous photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M6.5 3.5 2 8l4.5 4.5"/></svg></button><button type="button" class="sv-next" aria-label="Next photo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9.5 3.5 14 8l-4.5 4.5"/></svg></button></span></div>
+        </div>
+        <div class="sx-info">
+          <p class="sv-line" data-i18n="l7">Turn technical facades and sections into presentation-ready drawings.</p>
+          <div class="sx-meta"><div><span class="sx-k" data-i18n="sx.price">Price</span><b data-i18n="p7">from $170 / facade view</b></div><div><span class="sx-k" data-i18n="sx.time">Delivery</span><b data-i18n="sx.t2">Up to 3 days · +1 day per extra angle</b></div></div>
+          <a class="btn btn--accent sv-order" href="#contact" data-t="7"><span data-i18n="sv.order">Get a quote</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+          <a class="sx-ex" href="portfolio.html#more-exterior" data-i18n="sx.ex">See examples →</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <ul class="sv-terms rise">
+      <li><b data-i18n="tm1h">Bundle discounts</b><span data-i18n="tm1">10% from 3 views, 14% from 6, 17% from 12 — within one project, applied automatically, including later additions.</span></li>
+      <li><b data-i18n="tm2h">2 revision rounds included</b><span data-i18n="tm2">One at the 3D model stage, one on the final view. Every view comes from the same model, so proportions and materials stay consistent.</span></li>
+      <li><b data-i18n="tm3h">Simple payment</b><span data-i18n="tm3">Prices in USD per view. 50% to start, 50% after you approve the view. PayPal, or another method if it suits you better.</span></li>
+      <li><b data-i18n="tm4h">Express when you need it</b><span data-i18n="tm4">Twice as fast for +50% of the project price — e.g. $210 → $315.</span></li>
+    </ul>
+    <a class="custom" href="#contact">
+      <div class="ct"><h3 data-i18n="custom.t">Custom Visualization</h3><p data-i18n="custom.d">Something not on this list? Tell me about your project and I'll suggest the right format.</p></div>
+      <span class="arr"><svg width="22" height="22" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- 6. PROJECTS (4): drawing -> render comparison -->
+<section class="section projects slide-over" id="work" aria-labelledby="pj">
+  <div class="wrap">
+    <div class="prj-head rise">
+      <div><span class="label" data-i18n="prj.label">[ Selected work ]</span><h2 class="h2" id="pj" data-i18n="prj.h2">Selected <span class="ital">projects</span></h2><p class="prj-hint" data-i18n="prj.hint">From the approved 3D angle to the finished picture. Move across an image to see both.</p></div>
+    </div>
+    <div class="prj-grid" id="prjgrid">
+      <article class="prj prj--a rise">
+        <div class="cmp" style="--p:100%" role="group" aria-label="Angle and render comparison">
+          <img width="2000" height="987" src="images/projects/upper-floor-australia/final-2.jpg" srcset="images/projects/upper-floor-australia/final-2.jpg 2000w, images/projects/upper-floor-australia/zoom-2.jpg 3000w" sizes="(max-width: 900px) 100vw, 60vw" alt="Final interior rendering of a primary bathroom with a freestanding tub, upper floor of a family home in Australia" loading="lazy" draggable="false">
+          <img width="2000" height="987" class="cmp-top" src="images/projects/upper-floor-australia/angle.jpg" alt="The chosen 3D model angle for the same bathroom view" loading="lazy" draggable="false">
+          <span class="cmp-tag cmp-tag--l" data-i18n="cmp.a">Angle</span><span class="cmp-tag cmp-tag--r" data-i18n="cmp.b">Render</span>
+          <button class="cmp-handle" type="button" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Drag to compare angle and render"><i><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5 2 9l4 4M12 5l4 4-4 4"/></svg></i></button>
+        </div>
+        <div class="prj-cap"><b>01</b><div><h3 data-i18n="p1t">Upper floor of a family home, Australia</h3><p data-i18n="p1d">Four interior views — hallway with a bar niche, master en-suite, walk-in robe and office — from one 3D model, following the designer's specification.</p><a href="case-upper-floor-australia.html" data-i18n="prj.more">View project →</a></div></div>
+      </article>
+      <article class="prj prj--b rise">
+        <div class="cmp" style="--p:100%" role="group" aria-label="Angle and render comparison">
+          <img width="2000" height="1414" src="images/projects/growing-scope/final-1.jpg" srcset="images/projects/growing-scope/final-1.jpg 2000w, images/projects/growing-scope/zoom-1.jpg 3000w" sizes="(max-width: 900px) 100vw, 45vw" alt="Final interior rendering of a living room with flame-pattern wallpaper, green armchairs, a marble coffee table and a fireplace wall" loading="lazy" draggable="false">
+          <img width="2000" height="1414" class="cmp-top" src="images/projects/growing-scope/angle.jpg" alt="The chosen 3D model angle for the same living room view" loading="lazy" draggable="false">
+          <span class="cmp-tag cmp-tag--l" data-i18n="cmp.a">Angle</span><span class="cmp-tag cmp-tag--r" data-i18n="cmp.b">Render</span>
+          <button class="cmp-handle" type="button" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Drag to compare angle and render"><i><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5 2 9l4 4M12 5l4 4-4 4"/></svg></i></button>
+        </div>
+        <div class="prj-cap"><b>02</b><div><h3 data-i18n="p3t">One client, growing scope</h3><p data-i18n="p3d">3 interior views and 2 axonometric views from one 3D model I built from the designer's concept plan. Started with a single visual, grew into five, delivered in 12 days.</p><a href="case-growing-scope.html" data-i18n="prj.more">View project →</a></div></div>
+      </article>
+      <article class="prj prj--c rise">
+        <div class="cmp" style="--p:100%" role="group" aria-label="Angle and render comparison">
+          <img width="2000" height="1414" src="images/projects/exterior-to-interior/final-1.jpg" srcset="images/projects/exterior-to-interior/final-1.jpg 2000w, images/projects/exterior-to-interior/zoom-1.jpg 3000w" sizes="(max-width: 900px) 100vw, 55vw" alt="Final exterior rendering of a white two-story house with wood siding and a wooden garage door" loading="lazy" draggable="false">
+          <img width="2000" height="1414" class="cmp-top" src="images/projects/exterior-to-interior/angle.jpg" alt="The 3D model angle for the same exterior view" loading="lazy" draggable="false">
+          <span class="cmp-tag cmp-tag--l" data-i18n="cmp.a">Angle</span><span class="cmp-tag cmp-tag--r" data-i18n="cmp.b">Render</span>
+          <button class="cmp-handle" type="button" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Drag to compare angle and render"><i><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5 2 9l4 4M12 5l4 4-4 4"/></svg></i></button>
+        </div>
+        <div class="prj-cap"><b>03</b><div><h3 data-i18n="p4t">From exterior to interior</h3><p data-i18n="p4d">2D plans for both floors and an exterior view, then an axonometry and an extra angle: the full picture of the project, inside and out.</p><a href="case-exterior-to-interior.html" data-i18n="prj.more">View project →</a></div></div>
+      </article>
+      <article class="prj prj--d rise">
+        <div class="cmp" style="--p:100%" role="group" aria-label="Angle and render comparison">
+          <img width="2000" height="1180" src="images/projects/four-rooms-presentation/final-1.jpg" srcset="images/projects/four-rooms-presentation/final-1.jpg 2000w, images/projects/four-rooms-presentation/zoom-1.jpg 3000w" sizes="(max-width: 900px) 100vw, 55vw" alt="Final interior rendering of a primary bedroom with an upholstered bed, a sofa and an arched mirror" loading="lazy" draggable="false">
+          <img width="2000" height="1180" class="cmp-top" src="images/projects/four-rooms-presentation/angle.jpg" alt="The 3D model angle for the same bedroom view" loading="lazy" draggable="false">
+          <span class="cmp-tag cmp-tag--l" data-i18n="cmp.a">Angle</span><span class="cmp-tag cmp-tag--r" data-i18n="cmp.b">Render</span>
+          <button class="cmp-handle" type="button" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Drag to compare angle and render"><i><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5 2 9l4 4M12 5l4 4-4 4"/></svg></i></button>
+        </div>
+        <div class="prj-cap"><b>04</b><div><h3 data-i18n="p5t">Four rooms for a client presentation, Los Angeles</h3><p data-i18n="p5d">Four interior views and a 2D floor plan from one 3D model built from the designer's CAD plan set. Many extra rounds of revisions, delivered in 16 days.</p><a href="case-four-rooms-presentation.html" data-i18n="prj.more">View project →</a></div></div>
+      </article>
+    </div>
+    <div class="prj-more rise">
+      <a class="btn" href="portfolio.html"><span data-i18n="prj.btn">All projects</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+</div><!-- /slide-wrap -->
+</div><!-- /plx-wrap -->
+
+<!-- 7. HOW I WORK: process + FAQ (answers the questions designers ask before ordering) -->
+<section class="section process" id="process" aria-labelledby="pr">
+  <div class="wrap">
+    <div class="pr-head rise">
+      <span class="label" data-i18n="pr.label">[ How I work ]</span>
+      <h2 class="h2" id="pr" data-i18n="pr.h2">A clear process, <span class="ital">no surprises</span></h2>
+      <p class="pr-lead" data-i18n="pr.lead">Everything is handled in writing, so no calls are needed. You always know what stage your project is at and what comes next.</p>
+    </div>
+    <ol class="steps5 rise">
+      <li><span class="n">01</span><b data-i18n="ps1h">Send your project</b><span data-i18n="ps1">Floor plan with furniture and dimensions, plus materials, furniture, lighting and decor with links. Elevations if you have them.</span></li>
+      <li><span class="n">02</span><b data-i18n="ps2h">Quote &amp; 50% deposit</b><span data-i18n="ps2">I confirm the scope, the price and the start date. You pay half to book the slot.</span></li>
+      <li><span class="n">03</span><b data-i18n="ps3h">3D model &amp; view</b><span data-i18n="ps3">I build the model from your dimensions and you choose the view. Revision round one, then the remaining 50%.</span></li>
+      <li><span class="n">04</span><b data-i18n="ps4h">Final view</b><span data-i18n="ps4">I finish the view by hand over the approved model, following your materials and lighting.</span></li>
+      <li><span class="n">05</span><b data-i18n="ps5h">Revisions &amp; files</b><span data-i18n="ps5">Revision round two, then the final files: A4 at 450 dpi, ready for print and presentations.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 7b. KITCHEN PHOTO + FAQ: the photo stays pinned and the FAQ slides over it -->
+<div class="plx-wrap">
+<figure class="wide-photo" style="--w:2000;--h:1391"><img src="images/parallax-kitchen-dining.jpg" alt="Open kitchen and dining room rendering with a walnut table, crystal chandeliers and a marble island" width="2000" height="1391" loading="lazy" decoding="async"><figcaption class="photo-cap" data-i18n="cap.kitchen">Open kitchen and dining room · Interior rendering</figcaption></figure>
+
+<div class="slide-wrap"><!-- FAQ stays put at the end, Reviews slide over it -->
+<section class="section faq-sec slide-under" id="faq" aria-labelledby="fq">
+  <div class="wrap">
+    <div class="faq">
+      <div class="faq-head rise"><span class="label" data-i18n="faq.label">[ FAQ ]</span><h2 class="h2 faq-h" id="fq" data-i18n="faq.h">Questions designers <span class="ital">ask</span></h2></div>
+      <div class="faq-list rise">
+        <details><summary data-i18n="q0a">Do you use AI?</summary><p data-i18n="a0a">No. Every view starts with a 3D model I build from your drawings and is finished by hand in Procreate. I don't use AI image generators or stock renders.</p></details>
+        <details><summary data-i18n="q0b">Are these photorealistic renders?</summary><p data-i18n="a0b">They are close to photorealistic, but they are not raw CGI. I build each view from your drawings and 3D model, then finish it by hand: light, materials, depth and small details are painted in digitally. The proportions follow your plan exactly and the materials are the ones you specified. The result reads like a real room, with a slightly illustrated quality that makes a design easy to discuss and approve.</p></details>
+        <details><summary data-i18n="q1">What do I need to send?</summary><p data-i18n="a1">A floor plan with furniture layout and dimensions, and everything about the project: materials, photo references, furniture, lighting and decor, with links. Room elevations help if you have them, but they are optional. CAD, SketchUp, PDF or hand drawings all work. If something is missing, I'll tell you exactly what I need.</p></details>
+        <details><summary data-i18n="q2">How many revisions are included?</summary><p data-i18n="a2">Two rounds: one at the 3D model stage, one on the final view. Further changes are possible as paid edits, always agreed in advance. The chosen view can't be changed after you approve it.</p></details>
+        <details><summary data-i18n="q3">What files will I get?</summary><p data-i18n="a3">A high-resolution image at A4, 450 dpi (about 5,260 × 3,720 px), sharp enough for print and large screens. The Procreate source file stays with me.</p></details>
+        <details><summary data-i18n="q4">How do I pay?</summary><p data-i18n="a4">Via PayPal: 50% before we start, 50% after you approve the view and before final rendering. If PayPal doesn't work for you, let me know and we'll find a method that does.</p></details>
+        <details><summary data-i18n="q5">Can I present the renders as my own? Do you sign an NDA?</summary><p data-i18n="a5">Yes. I sign an NDA on request, and I can publish the project without crediting you, or only after a delay (one week, two months, six months). If the project can't be published at all, the price increases by 40%.</p></details>
+        <details><summary data-i18n="q6">How fast is it?</summary><p data-i18n="a6">The 3D model takes up to one day. One view is ready in up to 3 days; each additional angle of the same room adds 1 day. Need it sooner? Express is twice as fast for +50%. The time to review your brief isn't counted in the deadline.</p></details>
+        <details><summary data-i18n="q7">Where are you based? Is it reliable?</summary><p data-i18n="a7">I'm based in Ukraine (GMT+3) and work fully remotely. Backup power and internet keep every deadline on track. The time difference helps: send your files at the end of your day, and the work moves forward while you sleep.</p></details>
+        <details><summary data-i18n="q8">Can a visualization replace construction drawings?</summary><p data-i18n="a8">No. It’s a presentation tool that helps your client see the space and say yes. It doesn’t include dimensions, sections or specifications, except when they are what is being visualized, such as facade elevations, sections and axonometric views. It’s the perfect companion to your project documents.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rvw slide-over" id="rv" aria-label="Reviews">
+  <div class="wrap">
+    <div class="rvw-head rise">
+      <span class="label" data-i18n="rv.label">[ In their own words ]</span><h2 class="h2 rvw-h" data-i18n="rv.scale">The first project is rarely <span class="ital">the last</span>.</h2>
+    </div>
+    <div class="rvw-grid rise">
+      <figure class="rvw-item">
+        <div class="rvw-img"><img src="images/review-loft-kitchen-living.jpg" alt="Interior rendering of an open loft kitchen and living room" width="1200" height="607" loading="lazy" style="object-position:60% 50%"></div>
+        <blockquote class="q" data-i18n="r1q">“Thanks Svetlana! Wow this is amazing.”</blockquote>
+        <div class="who"><span class="av av--logo"><img src="images/avatar-scott-byc.png" alt="BYO Floor Plan logo" width="171" height="143" loading="lazy"></span><span class="rvw-nm"><b>Scott</b><small data-i18n="r1s">Director / Licensed Building Designer · Australia</small></span></div>
+        <button type="button" class="rvw-orig" data-full="images/review-shot-scott.png" data-alt="Message from Scott, Australia"><span data-i18n="rv.orig">View original</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></button>
+      </figure>
+      <figure class="rvw-item">
+        <div class="rvw-img"><img src="images/review-gold-living-room.jpg" alt="Interior rendering of a living room with a fireplace and gold wallcovering" width="1200" height="848" loading="lazy"></div>
+        <blockquote class="q" data-i18n="r2q">“Everything looks fabulous! Thanks so much for sharing your talent with me, and for going the extra mile to get things on time. I really appreciate it and look forward to working together again.”</blockquote>
+        <div class="who"><span class="av"><img src="images/avatar-mariella.jpg" alt="" width="160" height="160" loading="lazy"></span><span class="rvw-nm"><b>Mariella</b><small data-i18n="r2s">Lead Designer · Washington, USA</small></span></div>
+        <button type="button" class="rvw-orig" data-full="images/review-shot-mariella.png" data-alt="Email from Mariella, Washington"><span data-i18n="rv.orig">View original</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></button>
+      </figure>
+      <figure class="rvw-item">
+        <div class="rvw-img"><img src="images/review-master-bedroom.jpg" alt="Interior rendering of a master bedroom" width="1200" height="708" loading="lazy" style="object-position:50% 55%"></div>
+        <blockquote class="q" data-i18n="r3q">“I will also add that doing these sketches with you really has really helped me refine my design by seeing what's not working and what I need to add or take away…”</blockquote>
+        <div class="who"><span class="av av--face"><img src="images/avatar-patrick.webp" alt="" width="745" height="848" loading="lazy"></span><span class="rvw-nm"><b>Patrick</b><small data-i18n="r3s">Lead Designer · Los Angeles, USA</small></span></div>
+        <button type="button" class="rvw-orig" data-full="images/review-shot-patrick.png" data-alt="Email from Patrick, Los Angeles"><span data-i18n="rv.orig">View original</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></button>
+      </figure>
+    </div>
+  </div>
+</section>
+</div><!-- /slide-wrap -->
+</div><!-- /plx-wrap -->
+
+<!-- 4. ABOUT -->
+<section class="section about" id="about" aria-labelledby="ab">
+  <div class="wrap">
+    <div class="about-grid">
+      <figure class="about-fig rise"><img src="images/about-svetlana-postol.jpg" alt="Svetlana Postol, interior and architectural visualization artist" width="872" height="1300" loading="lazy"></figure>
+      <div class="about-copy rise">
+        <span class="label" data-i18n="about.label">[ About ]</span>
+        <h2 class="h2" id="ab" data-i18n="about.h2">The person behind the <span class="ital">visualization</span></h2>
+        <p class="about-lead" data-i18n="about.p1">My name is Svetlana Postol. I'm an interior and architectural visualization artist based in Ukraine, working with designers and architects in the US, UK, Canada and Australia.</p>
+        <p data-i18n="about.p2">I came to visualization from design, not from 3D. Since 2009 I've worked in graphic design, print, branding and web design, and I've always kept drawing, from watercolor to digital painting. That's where my eye for composition, color and light comes from: it's what makes a render sell the design, not just show it.</p>
+        <p data-i18n="about.p3">Every view starts with a precise 3D model built in ArchiCAD and SketchUp from your real dimensions, and is then finished by hand in Procreate. Backup power and internet keep every deadline on track.</p>
+        <a class="btn" href="about.html"><span data-i18n="about.btn">More about me</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7b. FULL-WIDTH PHOTO + CTA: the photo stays pinned and the CTA slides over it (no zoom, the photo only drifts inside its own pixels) -->
+<div class="plx-wrap">
+<figure class="wide-photo" style="--w:2400;--h:1646"><img src="images/laundry-room.jpg" alt="Laundry room rendering with greige cabinets, a marble-top island, two washing machines and woven roman shades" width="2400" height="1646" loading="lazy" decoding="async"><figcaption class="photo-cap" data-i18n="cap.laundry">Laundry room · Interior rendering</figcaption></figure>
+
+<!-- 8. CTA: text left, form right -->
+<section class="cta" id="contact" aria-labelledby="ct">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div class="cta-l rise">
+        <span class="label" data-i18n="end.label">[ Start a project ]</span>
+        <h2 class="h2" id="ct" data-i18n="end.h2">Have a project that doesn't <span class="ital">exist</span> in reality yet?</h2>
+        <p class="t" data-i18n="end.p">Tell me about it: the type of visualization, the number of views and your deadline. Share plans and photos by link. I reply within 24 hours with a clear next step.</p>
+        <ol class="steps">
+          <li><span class="n">01</span><span data-i18n="end.s1">You send the brief</span></li>
+          <li><span class="n">02</span><span data-i18n="end.s2">I reply with price and timeline</span></li>
+          <li><span class="n">03</span><span data-i18n="end.s3">You approve, I start</span></li>
+        </ol>
+        <div class="mail-line"><span data-i18n="end.or">Or write directly:</span> <b>hello@postol.design</b><button class="copy" id="copy" type="button" data-i18n="end.copy">Copy email</button></div>
+        <div class="mail-line"><span data-i18n="end.wa">Quick question?</span> <a class="wa-link" href="https://wa.me/380683511246" target="_blank" rel="noopener noreferrer">WhatsApp · +380 68 351 12 46</a></div>
+      </div>
+      <form class="form rise" id="brief" novalidate action="https://formspree.io/f/maeqjldv" method="POST" data-endpoint="https://formspree.io/f/maeqjldv" data-to="hello@postol.design" aria-label="Project brief">
+        <p class="form-hint" data-i18n="f.hint">Just a question? Fill in only your name, email and comment — the other fields are optional.</p>
+        <div class="f2">
+          <label class="fld"><span data-i18n="f.name">Name</span><input name="name" type="text" autocomplete="name" required placeholder="Jane Cooper" data-ph="f.name.ph"></label>
+          <label class="fld"><span data-i18n="f.email">Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@studio.com"></label>
+        </div>
+        <label class="fld"><span data-i18n="f.type">What do you need? <em>(optional)</em></span>
+          <select name="type">
+            <option value="" data-i18n="f.type.0">Select a visualization type</option>
+            <option data-i18n="v1n">Interior Renderings</option>
+            <option data-i18n="v2n">Exterior &amp; Architectural Renderings</option>
+            <option data-i18n="v3n">2D Floor Plan Rendering</option>
+            <option data-i18n="v4n">3D Floor Plan Rendering</option>
+            <option data-i18n="v5n">Axonometric Views</option>
+            <option data-i18n="v6n">Site Plans &amp; Landscape Plans</option>
+            <option data-i18n="v7n">Elevations &amp; Sections</option>
+            <option data-i18n="custom.t">Custom Visualization</option>
+          </select>
+        </label>
+        <div class="f2">
+          <label class="fld"><span data-i18n="f.views">Number of views <em>(optional)</em></span>
+            <select name="views">
+              <option data-i18n="f.v5">Not sure yet</option><option data-i18n="f.v1">1</option><option data-i18n="f.v2">2–3</option><option data-i18n="f.v3">4–6</option><option data-i18n="f.v4">7 or more</option>
+            </select>
+          </label>
+          <label class="fld"><span data-i18n="f.dl">Deadline</span>
+            <select name="deadline">
+              <option data-i18n="f.d1">Flexible</option><option data-i18n="f.d2">Within 1 week</option><option data-i18n="f.d3">1–2 weeks</option><option data-i18n="f.d4">2–4 weeks</option>
+            </select>
+          </label>
+        </div>
+        <label class="fld"><span data-i18n="f.link">Link to plans &amp; photos <em>(optional)</em></span><input name="link" type="url" inputmode="url" placeholder="Google Drive, Dropbox, WeTransfer…"></label>
+        <label class="fld"><span data-i18n="f.msg">Comment <em>(optional)</em></span><textarea name="message" rows="3" placeholder="Style, references, anything I should know"></textarea></label>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit"><span data-i18n="f.send">Send brief</span><span class="ico"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 11 3M5 3h6v6"/></svg></span></button>
+        <p class="f-note" id="fnote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</div>
+
+</main>
+
+<!-- layout:bottom (header, menu, footer and lightbox are shared: edit them in index.html, then run .claude/sync-layout.ps1) -->
+<footer class="site-footer on-dark">
+  <div class="wrap">
+    <div class="ft">
+      <div class="ft-intro">
+        <p class="ft-tag" data-i18n="ft.tag">Interior &amp; Architectural Visualization</p>
+        <a class="ft-cta" href="contact.html"><span data-i18n="cta.start">Start a project</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+      </div>
+      <div><h2 data-i18n="ft.menu">Menu</h2><a href="./" data-i18n="nav.home">Home</a><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a><a href="services.html" data-i18n="nav.services">Services &amp; Pricing</a><a class="ft-sub" href="floor-plan-rendering.html" data-i18n="nav.fp">Floor plan rendering</a><a class="ft-sub" href="axonometric-views.html" data-i18n="nav.axo">Axonometric views</a><a href="about.html" data-i18n="nav.about">About</a><a href="contact.html" data-i18n="nav.contact">Contact</a></div>
+      <div><h2 data-i18n="ft.contact">Contact</h2><a href="mailto:hello@postol.design">hello@postol.design</a><div class="social social--ft"><a href="https://www.instagram.com/postol.design/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/in/svitlana-postol/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M8 10.5V16M8 7.7v.1M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.3-2.6S16 11.3 16 13v3"/></svg></a><a href="https://www.pinterest.com/postoldesign/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10.7 20.6 12.3 14M11.1 13.8c.5.9 1.4 1.3 2.4 1.2 2.1-.2 3.4-2.2 3.2-4.4-.2-2.3-2.4-3.9-4.9-3.6-2.8.3-4.4 2.6-4.1 4.7.1.9.5 1.6 1.1 2"/></svg></a>
+<a href="https://wa.me/380683511246" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3.5 20.5l1.5-4.2A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.6c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c.6 1.2 1.6 2.1 2.8 2.7l.6-.5c.2-.1.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.5.8-.6.3-1.4.4-2.3.1-2.4-.8-4.4-2.8-5.2-5.2-.2-.8-.2-1.6.1-2.2z" fill="currentColor" stroke="none"/></svg></a></div></div>
+      <div><h2 data-i18n="ft.where">Location</h2><p data-i18n="ft.loc">Based in Ukraine (GMT+3) · Working with the US, UK, Canada and Australia</p>
+        <div class="ft-lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ru" aria-pressed="false">RU</button></div></div>
+    </div>
+    <div class="ft-marquee" role="img" aria-label="Svetlana Postol.design"><div class="ft-track" aria-hidden="true"><span>Svetlana Postol.design</span><span>Svetlana Postol.design</span><span>Svetlana Postol.design</span><span>Svetlana Postol.design</span></div></div>
+    <div class="ft-bot"><span data-i18n="ft.c">© 2026 Svetlana Postol. All renderings are protected by copyright and may not be used without permission.</span><a href="#top" data-i18n="ft.up">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button type="button" class="lb-x" id="lbx" aria-label="Close">&times;</button>
+  <button type="button" class="lb-n lb-p" id="lbp" aria-label="Previous">&#8592;</button>
+  <button type="button" class="lb-n lb-nx" id="lbn" aria-label="Next">&#8594;</button>
+  <figure class="lb-f"><img id="lbi" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><figcaption><span id="lbk"></span></figcaption></figure>
+</div>
+<!-- /layout:bottom -->
+<script src="js/main.js" defer></script>
+</body>
+</html>
