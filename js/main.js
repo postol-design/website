@@ -62,7 +62,7 @@
     'cta.start': 'Обсудить проект',
     'hero.eyebrow': 'Интерьерная и архитектурная визуализация',
     'hero.h1': 'Увидьте пространство ' + UL.replace('__W__', 'до его создания') + '.',
-    'hero.sub': 'Интерьерные и экстерьерные визуализации, планы и аксонометрия для дизайнеров интерьера и архитекторов. Точная 3D-модель по вашим чертежам, финальная прорисовка вручную. <b>От $170 за вид, готово за срок до 3 дней.</b>',
+    'hero.sub': 'Интерьерные и экстерьерные визуализации, планы и аксонометрия для дизайнеров интерьера и архитекторов. Точная 3D-модель по вашим чертежам, финальная прорисовка вручную. <b>От $210 за вид, готово за срок до 3 дней.</b>',
     'hero.b1': 'Смотреть работы', 'hero.b2': 'Обсудить проект',
     'badge': 'Без ИИ. Нарисовано вручную по точной 3D-модели.',
     'st1': 'лет в дизайне', 'st2': 'стран', 'st3': 'рендеров',
@@ -204,7 +204,7 @@
   // EN title/description come from the page itself; RU ones are picked by <body data-page="...">
   var PAGE = document.body.getAttribute('data-page') || 'home';
   var META_RU = {
-    home: { t: 'Интерьерная и архитектурная визуализация для дизайнеров | Светлана Постол', d: 'Интерьерные и экстерьерные визуализации, цветные планы и аксонометрия для дизайнеров интерьера и архитекторов. Точная 3D-модель, финальная прорисовка вручную. От $170 за вид, 2 круга правок.' },
+    home: { t: 'Интерьерная и архитектурная визуализация для дизайнеров | Светлана Постол', d: 'Интерьерные и экстерьерные визуализации, цветные планы и аксонометрия для дизайнеров интерьера и архитекторов. Точная 3D-модель, финальная прорисовка вручную. От $210 за вид, 2 круга правок.' },
     portfolio: { t: 'Портфолио — интерьерные и архитектурные визуализации | Светлана Постол', d: 'Интерьерные и экстерьерные визуализации, планы и аксонометрия для дизайнеров и архитекторов: кейсы с чертежами, 3D-моделью, ракурсами и финальными видами.' },
     services: { t: 'Услуги и цены — визуализация интерьеров, экстерьеров, планов | Светлана Постол', d: 'Интерьер от $210, экстерьер от $230, 2D- и 3D-планы от $170, аксонометрия от $180. Скидки на объём, 2 круга правок, до 3 дней на вид.' },
     contact: { t: 'Контакты — начать проект | Светлана Постол', d: 'Отправьте задание или просто задайте вопрос о визуализации. Отвечаю с ценой и сроком.' },
@@ -292,11 +292,13 @@
         if (d < R) { t = 1 - d / R; t = t * t * (3 - 2 * t) * dm.k; }
         var px = x, py = y;
         if (t > 0 && d > 0.5) { px += vx / d * t * 9; py += vy / d * t * 9; }
-        dx.fillStyle = 'rgba(' + Math.round(39 + 142 * t) + ',' + Math.round(37 + 94 * t) + ',' + Math.round(36 + 57 * t) + ',' + (0.14 + t * 0.34).toFixed(3) + ')';
+        var dk = document.documentElement.getAttribute('data-theme') === 'dark', b0 = dk ? 236 : 39;
+        dx.fillStyle = 'rgba(' + Math.round(b0 + (181 - b0) * t) + ',' + Math.round((dk ? 230 : 37) + ((dk ? 131 : 131) - (dk ? 230 : 37)) * t) + ',' + Math.round((dk ? 220 : 36) + (93 - (dk ? 220 : 36)) * t) + ',' + (0.14 + t * 0.34).toFixed(3) + ')';
         dx.beginPath(); dx.arc(px, py, 1.2 + t * 1.5, 0, 6.2832); dx.fill();
       }
     }
   }
+  window.heroRedraw = function () { if (typeof ddraw === 'function' && dW) ddraw(); };
   function dloop() {
     dm.k += (dm.kt - dm.k) * 0.12;
     ddraw();
@@ -403,7 +405,7 @@
       var t = e.target;
       // the ink trail is a hero-only flourish; the rest of the site keeps the plain cursor
       if (!(t.closest && t.closest('#hero'))) { pen.classList.remove('show'); return; }
-      dark = !!(t.closest && t.closest('.on-dark'));
+      dark = !!(t.closest && t.closest('.on-dark')) || document.documentElement.getAttribute('data-theme') === 'dark';
       pen.classList.add('show'); pen.classList.toggle('light', dark);
       pen.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
       var big = !!(t.closest && t.closest('a,button,.cmp'));
@@ -644,6 +646,16 @@
   }
   if (window.GA_ID && location.protocol !== 'file:') { var ck = ckGet(); if (ck === 'yes') gaLoad(); else if (ck !== 'no') ckBanner(); }
   $$('[data-ck-open]').forEach(function (a) { a.addEventListener('click', ckBanner); });
+
+  /* ---------- light / dark theme: the sun-moon button; the choice is remembered (the head script applies it before paint) ---------- */
+  function setTheme(d) {
+    if (d) document.documentElement.setAttribute('data-theme', 'dark'); else document.documentElement.removeAttribute('data-theme');
+    $$('[data-theme-tg]').forEach(function (b) { b.setAttribute('aria-pressed', String(d)); b.setAttribute('aria-label', lang === 'ru' ? (d ? 'Светлая тема' : 'Тёмная тема') : (d ? 'Light theme' : 'Dark theme')); });
+    try { localStorage.setItem('theme', d ? 'dark' : 'light'); } catch (e) {}
+    if (window.heroRedraw) window.heroRedraw();
+  }
+  $$('[data-theme-tg]').forEach(function (b) { b.addEventListener('click', function () { setTheme(document.documentElement.getAttribute('data-theme') !== 'dark'); }); });
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark');
 
   /* ---------- copy email ---------- */
   var cp = $('#copy');

@@ -837,3 +837,46 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -we
 .ft-bot-r { display: inline-flex; gap: 20px; flex-wrap: wrap; }
 .ft-ck { padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
 .ft-ck:hover { color: var(--white); }
+.social--hdr svg { width: 21px; height: 21px; } /* Instagram in the header, 15% larger */
+
+/* ---------- dark theme (html[data-theme="dark"], switched by the sun/moon button) ----------
+   The palette variables swap: text turns light, surfaces dark, pill buttons turn light with dark text.
+   Blocks that are dark by design (footer, dark CTA card, badge) keep the light-theme values. */
+.theme-tg { position: relative; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: inherit; cursor: pointer; transition: color .3s var(--ease); }
+.theme-tg:hover { color: var(--brown-d); }
+.theme-tg svg { width: 20px; height: 20px; }
+.theme-tg .th-moon, html[data-theme="dark"] .theme-tg .th-sun { display: none; }
+html[data-theme="dark"] .theme-tg .th-moon { display: block; }
+.mm-foot .theme-tg { width: 44px; height: 44px; box-shadow: inset 0 0 0 1px var(--line); }
+html[data-theme="dark"] {
+  --graphite: #ece6dc;
+  --white: #181615;
+  --gray: #201e1c;
+  --beige: #2a2725;
+  --brown: #c4936b;
+  --brown-d: #d4a47c;
+  --mute: rgba(236, 230, 220, .7);
+  --line: rgba(236, 230, 220, .15);
+  color-scheme: dark;
+}
+html[data-theme="dark"] .site-footer, html[data-theme="dark"] .custom, html[data-theme="dark"] .badge, html[data-theme="dark"] .skip {
+  --graphite: #272524; --white: #ffffff; --beige: #e2dbd1; --gray: #f3f2f0; --brown: #b5835d; --brown-d: #8a5d3b; --mute: rgba(255, 255, 255, .74); --line: rgba(255, 255, 255, .14);
+}
+html[data-theme="dark"] .site-footer { background: #100f0e; }
+html[data-theme="dark"] .custom { background: #2a2725; }
+html[data-theme="dark"] .hero { background: linear-gradient(180deg, #1d1b1a 0%, #191716 55%, #151312 100%); }
+html[data-theme="dark"] .site-header.scrolled { background: rgba(24, 22, 21, .92); }
+html[data-theme="dark"] .slide-wrap > .slide-under::after { background: #000; }
+html[data-theme="dark"] .fld input, html[data-theme="dark"] .fld select, html[data-theme="dark"] .fld textarea { border-bottom-color: rgba(236, 230, 220, .25); }
+html[data-theme="dark"] .fld select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23ece6dc' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E"); }
+html[data-theme="dark"] .fld select option { background: #181615; color: #ece6dc; }
+/* light pills over photos keep dark text */
+html[data-theme="dark"] .cmp-tag, html[data-theme="dark"] .fc-cap, html[data-theme="dark"] .photo-cap, html[data-theme="dark"] .pg-video figcaption, html[data-theme="dark"] .mk-badge, html[data-theme="dark"] .mk-badge span, html[data-theme="dark"] .mk-play, html[data-theme="dark"] .cmp-handle i { color: #272524; }
+html[data-theme="dark"] .cmp::after { background: #fff; }
+html[data-theme="dark"] .cmp-handle i, html[data-theme="dark"] .mk-badge { background: #fff; }
+/* white-backed works (plans, axonometries, model views) stay on white; placeholders turn dark */
+html[data-theme="dark"] .rvw-img, html[data-theme="dark"] .sx-sl, html[data-theme="dark"] .mk-media, html[data-theme="dark"] .ab-photo, html[data-theme="dark"] .pg-hero > img, html[data-theme="dark"] .pg-item, html[data-theme="dark"] .pf-photo, html[data-theme="dark"] .svp-row img, html[data-theme="dark"] .ab-slot, html[data-theme="dark"] .pg-still-i, html[data-theme="dark"] .pg-thumb, html[data-theme="dark"] .mw-item, html[data-theme="dark"] .fc-in { background-color: #2a2725; }
+html[data-theme="dark"] .pg-grid--whole .pg-item, html[data-theme="dark"] .pg-still--fit .pg-still-i, html[data-theme="dark"] .pg-still--2 .pg-still-i, html[data-theme="dark"] .pg-still--3 .pg-still-i, html[data-theme="dark"] .pg-still--4 .pg-still-i, html[data-theme="dark"] .pg-still--5 .pg-still-i, html[data-theme="dark"] .sx-panel--fit .sx-sl, html[data-theme="dark"] .pg-video--clip { background-color: #fff; }
+html[data-theme="dark"] .sv-prev:hover, html[data-theme="dark"] .sv-next:hover, html[data-theme="dark"] .mw-chip[aria-pressed="true"] { color: var(--white); }
+html[data-theme="dark"] .ck { border-color: var(--line); }
+html, body, .site-header, .hero, .section { transition: background-color .35s var(--ease), color .35s var(--ease); }
