@@ -828,3 +828,12 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -we
 .mk-vid .mk-play { width: 68px; height: 68px; margin: -34px 0 0 -34px; }
 .mk-vid .mk-play svg { width: 24px; height: 24px; }
 .ab-media-steps .mk-vid .mk-badge, .ab-media-steps .mk-vid .mk-badge span { color: var(--graphite); font-size: .6875rem; line-height: 1.4; }
+/* cookie banner: a small card at the bottom, in the site's own style (no shadow, one radius) */
+.ck { position: fixed; z-index: 150; left: 50%; bottom: 16px; width: min(680px, calc(100% - 32px)); display: flex; align-items: center; gap: 16px 24px; padding: 16px 20px; border-radius: var(--r); background: var(--white); color: var(--graphite); border: 1px solid var(--line); transform: translate(-50%, 24px); opacity: 0; transition: transform .35s var(--ease), opacity .35s var(--ease); }
+.ck.open { transform: translate(-50%, 0); opacity: 1; }
+.ck p { flex: 1; font-size: .875rem; line-height: 1.5; }
+.ck-b { display: flex; gap: 8px; flex: none; }
+@media (max-width: 760px) { .ck { flex-direction: column; align-items: stretch; } .ck-b > * { flex: 1; justify-content: center; } }
+.ft-bot-r { display: inline-flex; gap: 20px; flex-wrap: wrap; }
+.ft-ck { padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
+.ft-ck:hover { color: var(--white); }

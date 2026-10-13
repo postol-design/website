@@ -193,7 +193,7 @@
     'end.h2': 'У вас есть проект, которого ещё ' + I('нет') + ' в реальности?',
     'end.copy': 'Скопировать email', 'end.wa': 'Быстрый вопрос?',
     'ft.tag': 'Интерьерная и архитектурная визуализация', 'ft.menu': 'Меню', 'ft.contact': 'Контакты', 'ft.where': 'Локация',
-    'ft.loc': 'Украина (GMT+3) · Работаю с США, Великобританией, Канадой и Австралией', 'ft.c': '© 2026 Светлана Постол. Все визуализации защищены авторским правом и не могут использоваться без разрешения.', 'ft.up': 'Наверх ↑'
+    'ft.loc': 'Украина (GMT+3) · Работаю с США, Великобританией, Канадой и Австралией', 'ft.c': '© 2026 Светлана Постол. Все визуализации защищены авторским правом и не могут использоваться без разрешения.', 'ck.set': 'Настройки cookies', 'ck.t': 'Сайт использует cookies, чтобы считать посещения (Google Analytics). Без вашего согласия статистика не собирается.', 'ck.yes': 'Принять', 'ck.no': 'Отказаться', 'ft.up': 'Наверх ↑'
   };
   // texts of pages built by script (project pages) register their RU here before main.js runs
   if (window.EXTRA_RU) { for (var xk in window.EXTRA_RU) RU[xk] = window.EXTRA_RU[xk]; }
@@ -605,7 +605,7 @@
     if (ep) {
       btn.disabled = true; say(M.wait);
       fetch(ep, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(d) })
-        .then(function (r) { if (!r.ok) throw 0; form.reset(); say(M.ok, 'ok'); thanks(M.pop); })
+        .then(function (r) { if (!r.ok) throw 0; form.reset(); say(M.ok, 'ok'); thanks(M.pop); if (window.gtag) gtag('event', 'generate_lead', { form: 'brief' }); })
         .catch(function () { say(M.err, 'err'); })
         .then(function () { btn.disabled = false; });
     } else {
@@ -615,6 +615,35 @@
       location.href = 'mailto:' + form.getAttribute('data-to') + '?subject=' + encodeURIComponent(d.type ? 'Project inquiry: ' + d.type : 'Question from the website') + '&body=' + encodeURIComponent(body);
     }
   });
+
+  /* ---------- cookies: Google Analytics loads only after "Accept"; the choice is remembered; "Cookie settings" in the footer reopens the banner ---------- */
+  var CK = 'ck-consent';
+  function gaLoad() {
+    if (!window.GA_ID || window.gtag) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', window.GA_ID);
+    var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID; document.head.appendChild(s);
+  }
+  function ckGet() { try { return localStorage.getItem(CK); } catch (e) { return null; } }
+  function ckSet(v) { try { localStorage.setItem(CK, v); } catch (e) {} }
+  EN['ck.t'] = 'This site uses cookies to count visits (Google Analytics). Nothing is collected unless you accept.';
+  EN['ck.yes'] = 'Accept'; EN['ck.no'] = 'Decline';
+  function ckBanner() {
+    if ($('.ck')) return;
+    var b = document.createElement('div'); b.className = 'ck'; b.setAttribute('role', 'region'); b.setAttribute('aria-label', 'Cookies');
+    b.innerHTML = '<p data-i18n="ck.t"></p><div class="ck-b"><button type="button" class="btn btn--sm" data-ck="yes"><span data-i18n="ck.yes"></span></button><button type="button" class="btn btn--line btn--sm" data-ck="no"><span data-i18n="ck.no"></span></button></div>';
+    var dict = lang === 'ru' ? RU : EN; b.querySelectorAll('[data-i18n]').forEach(function (el) { el.innerHTML = dict[el.getAttribute('data-i18n')]; });
+    document.body.appendChild(b); setTimeout(function () { b.classList.add('open'); }, 30);
+    b.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-ck]'); if (!c) return;
+      var yes = c.getAttribute('data-ck') === 'yes'; ckSet(yes ? 'yes' : 'no');
+      if (yes) gaLoad(); else if (window.gtag) { location.reload(); return; }
+      b.classList.remove('open'); setTimeout(function () { b.remove(); }, 300);
+    });
+  }
+  if (window.GA_ID && location.protocol !== 'file:') { var ck = ckGet(); if (ck === 'yes') gaLoad(); else if (ck !== 'no') ckBanner(); }
+  $$('[data-ck-open]').forEach(function (a) { a.addEventListener('click', ckBanner); });
 
   /* ---------- copy email ---------- */
   var cp = $('#copy');
