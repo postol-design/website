@@ -60,7 +60,8 @@ html[lang="ru"] .ital { font-weight: 500; }
 .site-header { position: fixed; inset: 0 0 auto 0; z-index: 100; padding-top: env(safe-area-inset-top, 0px); transition: background .35s var(--ease), box-shadow .35s var(--ease), color .35s var(--ease); color: var(--graphite); }
 .site-header.over { color: var(--white); background: linear-gradient(180deg, rgba(24, 17, 10, .35), transparent); }
 .site-header.scrolled { background: rgba(255, 255, 255, .93); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
-.hdr { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 68px; gap: 16px; }
+/* logo, menu and the right group sit with equal space between them */
+.hdr { display: flex; justify-content: space-between; align-items: center; height: 68px; gap: 24px; }
 .logo { font-weight: 700; font-size: 1.0625rem; letter-spacing: -.01em; }
 .nav { display: flex; gap: clamp(16px, 2.2vw, 34px); font-size: .9375rem; font-weight: 500; }
 .nav a { position: relative; padding: 6px 0; }
@@ -880,3 +881,4 @@ html[data-theme="dark"] .pg-grid--whole .pg-item, html[data-theme="dark"] .pg-st
 html[data-theme="dark"] .sv-prev:hover, html[data-theme="dark"] .sv-next:hover, html[data-theme="dark"] .mw-chip[aria-pressed="true"] { color: var(--white); }
 html[data-theme="dark"] .ck { border-color: var(--line); }
 html, body, .site-header, .hero, .section { transition: background-color .35s var(--ease), color .35s var(--ease); }
+.hdr-r .theme-tg { margin-right: 6px; } /* a little air between the sun and Instagram */
