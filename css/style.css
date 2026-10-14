@@ -881,4 +881,4 @@ html[data-theme="dark"] .pg-grid--whole .pg-item, html[data-theme="dark"] .pg-st
 html[data-theme="dark"] .sv-prev:hover, html[data-theme="dark"] .sv-next:hover, html[data-theme="dark"] .mw-chip[aria-pressed="true"] { color: var(--white); }
 html[data-theme="dark"] .ck { border-color: var(--line); }
 html, body, .site-header, .hero, .section { transition: background-color .35s var(--ease), color .35s var(--ease); }
-.hdr-r .theme-tg { margin-right: 6px; } /* a little air between the sun and Instagram */
+.hdr-r .theme-tg { margin-left: 4px; } /* sun and Instagram sit after "Start a project" */
