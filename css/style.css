@@ -604,7 +604,7 @@ html.ft-tall .site-footer { position: relative; }
 .svp-terms-sec, .svp-cases { background: var(--gray); }
 .svp-proc { background: var(--white); }
 .svp-send { margin-top: clamp(40px, 5vw, 64px); padding-top: 24px; border-top: 1px solid var(--line); }
-.svp-send h3 { font-size: clamp(1.375rem, 2vw, 1.75rem); letter-spacing: -.02em; }
+.svp-send h3 { font-size: clamp(2rem, 3.6vw, 3.25rem); line-height: 1.06; letter-spacing: -.025em; }
 .svp-check li { position: relative; padding: 10px 0 10px 28px; border-bottom: 1px solid var(--line); font-weight: 500; }
 .svp-check li::before { content: ""; position: absolute; left: 2px; top: 17px; width: 12px; height: 7px; border-left: 1.6px solid var(--brown-d); border-bottom: 1.6px solid var(--brown-d); transform: rotate(-45deg); }
 .svp-note { margin-top: 18px; color: var(--mute); font-size: .9375rem; }
@@ -882,3 +882,217 @@ html[data-theme="dark"] .sv-prev:hover, html[data-theme="dark"] .sv-next:hover, 
 html[data-theme="dark"] .ck { border-color: var(--line); }
 html, body, .site-header, .hero, .section { transition: background-color .35s var(--ease), color .35s var(--ease); }
 .hdr-r .theme-tg { margin-left: 4px; } /* sun and Instagram sit after "Start a project" */
+/* phones: the hero photos are a row you swipe through (scroll snap), each with a white "+" that says "tap to enlarge" */
+.fc-in::after { content: ""; position: absolute; right: 10px; top: 10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(255, 255, 255, .92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23272524' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M7 2.5v9M2.5 7h9'/%3E%3C/svg%3E") center / 14px no-repeat; display: none; }
+@media (max-width: 760px) {
+  .fan { display: flex; gap: 12px; height: auto; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px var(--gutter) 6px; scroll-padding-inline: var(--gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .fan::-webkit-scrollbar { display: none; }
+  .fc { position: relative; left: auto; top: auto; flex: none; width: 68vw; max-width: 300px; opacity: 1; transform: none; scroll-snap-align: start; }
+  .fc-in { aspect-ratio: 4 / 3; }
+  .fc-in img { transform: none; }
+  .fc:hover .fc-in, .fc:hover .fc-in img { transform: none; }
+  .fc-in::after { display: block; }
+}
+/* phones: the three numbers sit in one row of small squares, the figure above its label */
+@media (max-width: 760px) {
+  .stat-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .stat { grid-template-columns: 1fr; align-content: start; gap: 6px; padding: 12px 10px; aspect-ratio: 1; }
+  .stat .tag { margin-bottom: 0; font-size: .6875rem; }
+  .stat b { font-size: clamp(1.75rem, 8.5vw, 2.25rem); }
+  .stat span.l { font-size: .8125rem; line-height: 1.25; }
+  .stats { padding-block: 36px; }
+  .badge { font-size: .8125rem; }
+}
+/* phones: a shorter Services block — smaller photo arrows, tighter rows, the four terms in two columns, a slimmer custom card */
+@media (max-width: 760px) {
+  #services { padding-block: 48px; }
+  .sx-tab { padding: 12px 12px 12px 0; font-size: .875rem; }
+  .sx-panels { margin-top: 16px; }
+  .sx-panel { gap: 14px; }
+  .sx-nav { margin-top: 8px; gap: 12px; }
+  .sv-prev, .sv-next { width: 34px; height: 34px; }
+  .sv-prev svg, .sv-next svg { width: 13px; height: 13px; }
+  .sx-info { gap: 14px; }
+  .sx-info .sv-line { font-size: 1rem; }
+  .sx-meta > div { padding: 8px 0; gap: 12px; }
+  .sx-meta b { font-size: .875rem; }
+  .sv-terms { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; margin-bottom: 20px; padding-top: 18px; }
+  .sv-terms b { font-size: .9375rem; }
+  .sv-terms span { font-size: .8125rem; line-height: 1.45; }
+  .custom { padding: 18px; gap: 14px; }
+  .custom h2, .custom h3 { font-size: 1.375rem; }
+  .custom p { font-size: .9375rem; }
+  .sx-more { margin-top: 24px; }
+}
+/* phones: the hero text fills the rest of the first screen — its lines spread evenly, no empty field under the buttons */
+@media (max-width: 760px) {
+  .hero { gap: 20px; }
+  .hero-copy { flex: 1; justify-content: space-evenly; gap: 12px; }
+}
+/* "Get a quote" and "See examples" on one line: the button left, the link on the right */
+.sx-act { align-self: stretch; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+/* phones: no blocks sliding over blocks — every section, full-width photo and the footer simply scroll in order */
+@media (max-width: 760px) {
+  .wide-photo, .slide-wrap > .slide-under, .site-footer { position: relative; top: auto; bottom: auto; }
+  .slide-wrap > .slide-under::after { display: none; }
+  .wide-photo img { transform: none !important; }
+  .site-footer > .wrap { transform: none !important; }
+}
+/* FAQ no longer stays pinned for the reviews to slide over it (all screens) */
+.slide-wrap > #faq { position: relative; top: auto; }
+.slide-wrap > #faq::after { display: none; }
+/* less air between "All projects" and "How I work" */
+#work { padding-bottom: clamp(40px, 4.5vw, 64px); }
+#process { padding-top: clamp(48px, 5.5vw, 80px); }
+/* Selected projects on phones: one project at a time, swipe (on the caption) or use the arrows; the counter shows where you are */
+.prj-nav { display: none; }
+@media (max-width: 760px) {
+  .prj-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); row-gap: 0; }
+  .prj-grid::-webkit-scrollbar { display: none; }
+  .prj-grid .prj { flex: none; width: 100%; scroll-snap-align: start; }
+  .prj-nav { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 16px; }
+  .prj-nav .sv-prev, .prj-nav .sv-next { width: 38px; height: 38px; }
+  .prj-more { margin-top: 24px; }
+}
+/* phones: "How I work" steps two per row, tighter */
+@media (max-width: 560px) {
+  .steps5 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 16px; }
+  .steps5 li { padding-top: 14px; gap: 6px; }
+  .steps5 b { font-size: .9375rem; }
+  .steps5 span:not(.n) { font-size: .8125rem; line-height: 1.45; }
+}
+/* phones: a larger footer — bigger type, social icons twice the size, a bigger language switch and "Start a project" */
+@media (max-width: 760px) {
+  .ft a, .ft p { font-size: 1rem; padding: 6px 0; }
+  .ft a.ft-sub { font-size: .875rem; }
+  .ft h2 { font-size: .8125rem; margin-bottom: 12px; }
+  .ft .ft-tag { font-size: 1.75rem; }
+  .ft .ft-cta { font-size: 1.0625rem; gap: 10px; }
+  .ft-cta svg { width: 13px; height: 13px; }
+  .social--ft { display: flex; flex-wrap: wrap; gap: 6px; margin-left: -10px; }
+  .social--ft a { width: 56px; height: 56px; }
+  .social--ft svg { width: 34px; height: 34px; }
+  .ft-lang { gap: 22px; }
+  .ft-lang button { font-size: 1.0625rem; padding-bottom: 4px; }
+  .ft-bot { font-size: .875rem; }
+}
+/* "See examples" next to "Get a quote": a white pill of the same height */
+.sx-act .sx-ex { display: inline-flex; align-items: center; height: 52px; padding: 0 24px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--graphite); font-size: .9375rem; font-weight: 600; white-space: nowrap; transition: border-color .3s var(--ease), color .3s var(--ease); }
+.sx-act .sx-ex:hover { border-color: var(--graphite); color: var(--graphite); }
+@media (max-width: 760px) { .sx-act .sx-ex { padding: 0 20px; } }
+/* footer: "Back to top" sits at the end of the language row on phones (brown), in the bottom row elsewhere */
+.ft-lang-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.ft-lang-row .ft-lang { margin-top: 14px; }
+.ft-up-m { display: none !important; }
+@media (max-width: 760px) {
+  .ft .ft-tag { max-width: none; font-size: 1.5rem; }
+  .social--ft a { width: 46px; height: 46px; }
+  .social--ft svg { width: 26px; height: 26px; }
+  .ft-bot { font-size: .6875rem; }
+  .ft-bot .ft-up { display: none; }
+  .ft-lang-row { margin-top: 14px; }
+  .ft-lang-row .ft-lang { margin-top: 0; }
+  .ft .ft-up-m { display: inline-block !important; padding: 0; color: var(--brown); font-size: .875rem; }
+}
+/* phones, home About: label and heading first, then the portrait, then the text */
+@media (max-width: 760px) {
+  #about .about-grid { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  #about .about-copy { display: contents; }
+  #about .about-copy > * { order: 3; margin-bottom: 14px; }
+  #about .about-copy > .label { order: 1; margin-bottom: 10px; }
+  #about .about-copy > .h2 { order: 1; margin-bottom: 18px; }
+  #about .about-fig { order: 2; margin-bottom: 20px; }
+  #about .about-copy > .btn { align-self: flex-start; margin-top: 6px; }
+}
+/* mobile menu: smaller items, all social icons + the theme switch in one row, EN/RU and "Start a project" in the next */
+.mmenu nav a { font-size: 1.5rem; padding: 10px 0; }
+.mmenu nav a.mm-sub { font-size: 1rem; padding: 7px 0 7px 18px; }
+.mmenu .mm-foot { gap: 14px; align-items: stretch; }
+.mm-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.social--mm { margin-left: -8px; }
+.social--mm a { width: 44px; height: 44px; }
+.social--mm svg { width: 24px; height: 24px; }
+.mm-foot .lang { font-size: 1rem; padding: 4px; }
+.mm-foot .lang button { padding: 8px 16px; }
+/* phones, About "Why designers work with me": two points per row, smaller type */
+@media (max-width: 560px) {
+  .ab-why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .ab-why-grid li { gap: 6px; padding-top: 14px; }
+  .ab-why-grid b { font-size: 1rem; line-height: 1.3; }
+  .ab-why-grid span:not(.n) { font-size: .8125rem; line-height: 1.5; }
+}
+/* small subheadings in the numbered lists (terms, steps, Why, Who I help, How every view is made): two points bigger everywhere */
+.sv-terms b, .ab-cards b, .ab-media-steps b, .ab-why-grid b { font-size: 1.25rem; line-height: 1.3; }
+.steps5 b { font-size: 1.1875rem; line-height: 1.3; }
+@media (max-width: 760px) {
+  .sv-terms b, .steps5 b { font-size: 1.0625rem; }
+}
+@media (max-width: 560px) {
+  .ab-why-grid b { font-size: 1.125rem; }
+}
+/* service pages: "What to send" and "Questions" are real section headings, the size of .h2 */
+.svp-group--h { font-size: clamp(2rem, 3.6vw, 3.25rem); line-height: 1.06; letter-spacing: -.025em; text-transform: none; padding-top: 24px; }
+.svp-group--h + * { margin-top: clamp(16px, 2vw, 24px); }
+/* phones, home: About follows the numbers closely */
+@media (max-width: 760px) { .stats + #about { padding-top: 20px; } }
+/* phones, About: tighter gaps around the numbers, the four numbers as a 2 × 2 grid */
+@media (max-width: 760px) {
+  .ab-hero { padding-bottom: 24px; }
+  .ab-hero + .stats + .ab-who { padding-top: 32px; }
+  .stat-row--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .ab-hero + .stats { padding-block: 12px; }
+  .stat-row--4 .stat { aspect-ratio: auto; min-height: 0; }
+}
+/* floor plan page, "How sq ft pricing works": labelled rows, the example's total in brown */
+.fp-rules { list-style: none; margin-top: 16px; max-width: 900px; border-top: 1px solid var(--line); }
+.fp-rules li { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 1.0625rem; line-height: 1.5; }
+.fp-rules li > b { font-weight: 600; }
+.fp-rules .fp-ex span b { color: var(--brown-d); font-weight: 600; }
+@media (max-width: 760px) {
+  .fp-rules li { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; font-size: 1rem; }
+}
+/* footer bottom: "Cookie settings" and "Back to top" on one line (the button no longer centres itself in the stretched row); "Back to top" in brown */
+.ft-bot-r { align-items: flex-start; }
+.ft-bot .ft-up { color: var(--brown); }
+.ft-bot .ft-up:hover { color: var(--white); }
+/* price cards (services.html and the service pages): a big picture, the name, one line, a big price and "Get a quote";
+   on services.html every group heads with its service page and "Learn more" */
+.svc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: clamp(40px, 5vw, 64px); padding-top: 18px; border-top: 1px solid var(--graphite); }
+.svc-head h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -.02em; line-height: 1.1; }
+.svc-more { font-size: .875rem; font-weight: 600; white-space: nowrap; color: var(--brown-d); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.svc-more:hover { color: var(--graphite); }
+.svc-grid { list-style: none; margin-top: clamp(16px, 2vw, 24px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
+.svc-card { display: flex; flex-direction: column; scroll-margin-top: 90px; }
+.svc-img { aspect-ratio: 4 / 3; border-radius: var(--r); overflow: hidden; background: #e6e1d9; }
+.svc-img img { width: 100%; height: 100%; object-fit: cover; }
+.svc-card--fit .svc-img { background: #fff; border: 1px solid var(--line); }
+.svc-card--fit .svc-img img { object-fit: contain; padding: 8px; }
+.svc-body { display: flex; flex-direction: column; flex: 1; gap: 6px; padding-top: 14px; }
+.svc-body h3 { font-size: clamp(1.125rem, 1.5vw, 1.375rem); letter-spacing: -.015em; line-height: 1.2; }
+.svc-body h3 a:hover { color: var(--brown-d); }
+.svc-body p { color: var(--mute); font-size: .9375rem; line-height: 1.5; }
+.svc-foot { margin-top: auto; padding-top: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.svc-foot .svp-price { font-size: clamp(1.375rem, 2vw, 1.75rem); letter-spacing: -.02em; }
+.pg-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pg-grid--3 .pg-item { aspect-ratio: 4 / 3; }
+.pg-grid--3 .pg-item img { height: 100%; object-fit: cover; }
+.pg-grid--2.pg-grid--whole .pg-item img { height: auto; object-fit: contain; }
+html[data-theme="dark"] .svc-img { background-color: #2a2725; }
+html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
+@media (max-width: 1000px) { .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .svc-head { margin-top: 36px; }
+  .svc-grid { gap: 20px 12px; }
+  .svc-body { padding-top: 10px; gap: 4px; }
+  .svc-body h3 { font-size: 1rem; }
+  .svc-body p { font-size: .8125rem; line-height: 1.45; }
+  .svc-foot { padding-top: 8px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .svc-foot .svp-price { font-size: 1.25rem; }
+  .svc-foot .svp-q { font-size: .8125rem; }
+  .pg-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1001px) { .svc-grid:has(> :nth-child(4)) { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.pg-grid + .pg-grid { margin-top: clamp(10px, 1.4vw, 18px); }
+@media (min-width: 761px) { .stats + #about { padding-top: 0; } } /* home: the gap under the numbers equals the gap above them */

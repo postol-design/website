@@ -4,7 +4,7 @@
 window.PROJECTS = [
   {
     slug: 'upper-floor-australia', n: '01', cover: 'images/projects/upper-floor-australia/final-2.jpg',
-    services: [['svp.s1', 'Interior rendering', 'services.html#interior', 1]],
+    services: [['svp.s1', 'Interior rendering', 'interior-rendering.html', 1]],
     title: { en: 'Upper floor of a family home', ru: 'Второй этаж семейного дома' },
     type: { en: 'Interior renderings', ru: 'Интерьерные визуализации' },
     client: 'Scott · BYO Floor Plan', location: { en: 'Australia', ru: 'Австралия' },
@@ -32,7 +32,7 @@ window.PROJECTS = [
   },
   {
     slug: 'growing-scope', n: '02', cover: 'images/projects/growing-scope/final-1.jpg',
-    services: [['svp.s1', 'Interior rendering', 'services.html#interior', 1], ['svp.s9', 'Axonometric view', 'axonometric-views.html', 5]],
+    services: [['svp.s1', 'Interior rendering', 'interior-rendering.html', 1], ['svp.s9', 'Axonometric view', 'axonometric-views.html', 5]],
     title: { en: 'One client, growing scope', ru: 'Один клиент, растущий объём' },
     type: { en: 'Interior renderings · Axonometric views', ru: 'Интерьерные визуализации · Аксонометрия' },
     client: 'Mariella · Splendor Styling', clientUrl: 'https://www.instagram.com/splendorstyling/', location: { en: 'Washington, USA', ru: 'Вашингтон, США' },
@@ -48,8 +48,8 @@ window.PROJECTS = [
     brief: { en: 'She sent a concept plan with dimensions and photos of the rooms with the furniture drawn in, a material board with a wallpaper for every wall and ceiling, drapery details and a spec sheet with a link for every item. I built the 3D model from them, so every view added later came from the same model and stayed consistent with the ones before it. Started with one visual, grew into five, and the bundle discount still applied to everything.', ru: 'Она прислала концепт-план с размерами и фото комнат с нарисованной поверх мебелью, доску материалов с обоями для каждой стены и потолка, детали штор и спецификацию со ссылкой на каждый предмет. 3D-модель по ним построила я, поэтому каждый новый вид брался из той же модели и совпадал с предыдущими. Начали с одной визуализации, выросли до пяти, и скидка за пакет применилась ко всему.' },
     note: { en: 'Only have a floor plan and a material board? That is enough: I build the 3D model myself and send you angles to choose from.', ru: 'Есть только план и доска материалов? Этого достаточно: 3D-модель я построю сама и пришлю ракурсы на выбор.' },
     sentLead: { en: 'No 3D model this time: a concept plan with dimensions, photos of the rooms, a material board and a spec sheet with vendor links.', ru: 'В этот раз без 3D-модели: концепт-план с размерами, фото комнат, доска материалов и спецификация со ссылками на поставщиков.' },
-    drawings: ['drawing-1', 'drawing-2'], drawingsStill: true,
-    drawingsTitle: { en: 'The designer’s concept plan and material board', ru: 'Концепт-план и доска материалов дизайнера' },
+    drawings: ['drawing-1', 'drawing-2', 'drawing-3', 'drawing-4'], drawingsStill: true, drawingsRow: true,
+    drawingsTitle: { en: 'Pages from the designer’s concept: plan, material board and drapery details', ru: 'Страницы из концепции дизайнера: план, доска материалов и детали штор' },
     materialsTitle: { en: 'Wallpapers, fabrics and furniture from the spec', ru: 'Обои, ткани и мебель из спецификации' },
     materials: ['material-1', 'material-2', 'material-3', 'material-4', 'material-5', 'material-6', 'material-7', 'material-8', 'material-9', 'material-10', 'material-11', 'material-12'], materialsStill: true,
     // Svetlana's own model: a walk-through video (4:3) and the five angles
@@ -61,7 +61,7 @@ window.PROJECTS = [
   },
   {
     slug: 'exterior-to-interior', n: '03', cover: 'images/projects/exterior-to-interior/final-1.jpg',
-    services: [['svp.s4', 'Exterior rendering', 'services.html#exterior', 2], ['svp.s6', '2D floor plan', 'floor-plan-rendering.html', 3], ['svp.s9', 'Axonometric view', 'axonometric-views.html', 5]],
+    services: [['svp.s4', 'Exterior rendering', 'exterior-rendering.html', 2], ['svp.s6', '2D floor plan', 'floor-plan-rendering.html', 3], ['svp.s9', 'Axonometric view', 'axonometric-views.html', 5]],
     title: { en: 'From exterior to interior', ru: 'От экстерьера до интерьера' },
     type: { en: 'Exterior · Floor plans · Axonometry', ru: 'Экстерьер · Планы · Аксонометрия' },
     client: 'Michelle · Belyn Studio', clientUrl: 'https://www.instagram.com/belynstudio/',
@@ -92,7 +92,7 @@ window.PROJECTS = [
   },
   {
     slug: 'four-rooms-presentation', n: '04', cover: 'images/projects/four-rooms-presentation/final-1.jpg',
-    services: [['svp.s1', 'Interior rendering', 'services.html#interior', 1], ['svp.s6', '2D floor plan', 'floor-plan-rendering.html', 3]],
+    services: [['svp.s1', 'Interior rendering', 'interior-rendering.html', 1], ['svp.s6', '2D floor plan', 'floor-plan-rendering.html', 3]],
     title: { en: 'Four rooms for a client presentation', ru: 'Четыре комнаты для презентации клиенту' },
     type: { en: 'Interior renderings · Floor plan', ru: 'Интерьерные визуализации · План' },
     client: 'Patrick · Interior designer', location: { en: 'Los Angeles, USA', ru: 'Лос-Анджелес, США' },
@@ -116,7 +116,7 @@ drawingsTitle: { en: 'From the designer’s plan set and mockups', ru: 'Из п�
     video: 'model-video', models: ['model-1', 'model-2', 'model-3', 'model-4'],
     modelText: { en: 'I built the 3D model from the plan set and reworked the plan where the specification asked for it. The video walks through the model; below are the four angles.', ru: '3D-модель я построила по пакету чертежей и доработала план там, где этого требовала спецификация. На видео — проход по модели, ниже — четыре ракурса.' },
     angle: 'angle-2', angleFinal: 'final-2',
-    revText: { en: 'Two rounds are included on every view. Patrick wanted to refine the design further, so the extra rounds were added to the order, and he gladly paid for them.', ru: 'Два круга правок на каждый вид включены. Патрик хотел доработать дизайн дальше, поэтому дополнительные круги добавили к заказу, и он охотно их оплатил.' },
+    revText: { en: 'Two free revision rounds are included on every view. Patrick wanted to refine the design further, so the extra rounds were added to the order, and he gladly paid for them.', ru: 'Два бесплатных раунда правок на каждый вид включены. Патрик хотел доработать дизайн дальше, поэтому дополнительные круги добавили к заказу, и он охотно их оплатил.' },
     finals: ['final-1', 'final-2', 'final-3', 'final-4', 'final-5'], zoom: ['zoom-1', 'zoom-2', 'zoom-3', 'zoom-4', 'zoom-5'],
     review: { q: { en: '“Of course! I’m so glad I found you! Your artwork is adding so much to my presentations and I’m so excited to share them with my clients.”', ru: '«Конечно! Я так рад, что нашёл вас! Ваши работы так много добавляют моим презентациям, и мне не терпится показать их клиентам.»' }, who: 'Patrick, Interior designer', shot: 'images/projects/four-rooms-presentation/review-shot.png' }
   },
