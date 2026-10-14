@@ -1111,3 +1111,14 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
   .sx-act .btn, .sx-act .sx-ex { height: 46px; padding: 0 18px; font-size: .875rem; white-space: nowrap; }
   .sx-act .btn .ico { margin-left: -2px; }
 }
+/* phones, Selected projects: a smaller description; the counter and arrows on the left, "All projects" on the right of the same line */
+@media (max-width: 760px) {
+  .prj-cap p { font-size: .875rem; line-height: 1.5; }
+  .prj-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; }
+  .prj-foot .prj-nav { margin-top: 0; justify-content: flex-start; }
+  .prj-foot .prj-more { margin-top: 0; }
+  .prj-foot .prj-more .btn { height: 46px; padding: 0 18px; font-size: .875rem; }
+}
+/* the brief form never gets wider than the screen: on Android a select can ask for the width of its longest option */
+.cta-grid > *, .form, .form > *, .f2 > * { min-width: 0; }
+.fld select { min-width: 0; max-width: 100%; text-overflow: ellipsis; }
