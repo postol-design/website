@@ -1123,3 +1123,11 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
 .cta-grid > *, .form, .form > *, .f2 > * { min-width: 0; }
 .fld select { min-width: 0; max-width: 100%; text-overflow: ellipsis; }
 @media (max-width: 760px) { .ft p[data-i18n="ft.loc"] { font-size: .8125rem; line-height: 1.5; } } /* phones: the footer location line smaller */
+/* phones: price cards one under another, the picture on the left, the text on the right */
+@media (max-width: 760px) {
+  .svc-grid { grid-template-columns: 1fr; gap: 14px; }
+  .svc-card { display: grid; grid-template-columns: 42% minmax(0, 1fr); gap: 14px; align-items: start; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .svc-card:last-child { border-bottom: 0; padding-bottom: 0; }
+  .svc-body { padding-top: 0; }
+  .svc-foot { padding-top: 6px; }
+}
