@@ -1059,8 +1059,8 @@ html, body, .site-header, .hero, .section { transition: background-color .35s va
 .ft-bot .ft-up:hover { color: var(--white); }
 /* price cards (services.html and the service pages): a big picture, the name, one line, a big price and "Get a quote";
    on services.html every group heads with its service page and "Learn more" */
-.svc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: clamp(40px, 5vw, 64px); padding-top: 18px; border-top: 1px solid var(--graphite); }
-.svc-head h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -.02em; line-height: 1.1; }
+.page-services .svc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: clamp(40px, 5vw, 64px); padding-top: 18px; border-top: 1px solid var(--graphite); }
+.page-services .svc-head h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -.02em; line-height: 1.1; }
 .svc-more { font-size: .875rem; font-weight: 600; white-space: nowrap; color: var(--brown-d); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .svc-more:hover { color: var(--graphite); }
 .svc-grid { list-style: none; margin-top: clamp(16px, 2vw, 24px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
@@ -1083,7 +1083,7 @@ html[data-theme="dark"] .svc-img { background-color: #2a2725; }
 html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
 @media (max-width: 1000px) { .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) {
-  .svc-head { margin-top: 36px; }
+  .page-services .svc-head { margin-top: 36px; }
   .svc-grid { gap: 20px 12px; }
   .svc-body { padding-top: 10px; gap: 4px; }
   .svc-body h3 { font-size: 1rem; }
@@ -1099,3 +1099,15 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
 /* mobile menu: items start right under the header, the icons and buttons follow the list (not pinned to the bottom) */
 .mmenu { padding-top: calc(72px + env(safe-area-inset-top, 0px)); overflow-y: auto; }
 .mmenu .mm-foot { margin-top: 28px; }
+/* phones, home numbers: narrower cards that never overflow, the labels in two short lines */
+@media (max-width: 760px) {
+  .stat-row:not(.stat-row--4) .stat { min-width: 0; padding: 12px 10px; aspect-ratio: auto; }
+  .stat-row:not(.stat-row--4) .stat b { font-size: clamp(1.625rem, 7.5vw, 2rem); }
+  .stat-row:not(.stat-row--4) .stat span.l { max-width: 9ch; }
+}
+/* phones, home Services: "Get a quote" and "See examples" on one line, at the left and right edges */
+@media (max-width: 760px) {
+  .sx-act { flex-wrap: nowrap; gap: 10px; }
+  .sx-act .btn, .sx-act .sx-ex { height: 46px; padding: 0 18px; font-size: .875rem; white-space: nowrap; }
+  .sx-act .btn .ico { margin-left: -2px; }
+}
