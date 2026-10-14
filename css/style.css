@@ -1096,3 +1096,6 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
 @media (min-width: 1001px) { .svc-grid:has(> :nth-child(4)) { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .pg-grid + .pg-grid { margin-top: clamp(10px, 1.4vw, 18px); }
 @media (min-width: 761px) { .stats + #about { padding-top: 0; } } /* home: the gap under the numbers equals the gap above them */
+/* mobile menu: items start right under the header, the icons and buttons follow the list (not pinned to the bottom) */
+.mmenu { padding-top: calc(72px + env(safe-area-inset-top, 0px)); overflow-y: auto; }
+.mmenu .mm-foot { margin-top: 28px; }
