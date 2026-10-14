@@ -1133,3 +1133,4 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
 }
 /* below 900px the about and contact grids are one column: twelve columns with 24–32px gaps are wider than a narrow phone */
 @media (max-width: 900px) { .about-grid, .cta-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 760px) { #services { padding-top: 32px; } } /* phones: Services starts closer to the hallway photo */
