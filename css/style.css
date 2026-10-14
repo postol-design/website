@@ -1134,3 +1134,11 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
 /* below 900px the about and contact grids are one column: twelve columns with 24–32px gaps are wider than a narrow phone */
 @media (max-width: 900px) { .about-grid, .cta-grid { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 760px) { #services { padding-top: 32px; } } /* phones: Services starts closer to the hallway photo */
+/* phones, About "Who I work with": the "Become a client" button goes under the three cards */
+@media (max-width: 760px) {
+  .ab-who .wrap { display: flex; flex-direction: column; }
+  .ab-who .prj-head { display: contents; }
+  .ab-who .prj-head > div { order: 1; }
+  .ab-who .ab-cards { order: 2; }
+  .ab-who .prj-head > .btn { order: 3; align-self: flex-start; margin-top: 24px; }
+}
