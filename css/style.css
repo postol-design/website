@@ -1131,3 +1131,5 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
   .svc-body { padding-top: 0; }
   .svc-foot { padding-top: 6px; }
 }
+/* below 900px the about and contact grids are one column: twelve columns with 24–32px gaps are wider than a narrow phone */
+@media (max-width: 900px) { .about-grid, .cta-grid { grid-template-columns: minmax(0, 1fr); } }
