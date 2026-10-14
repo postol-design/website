@@ -1122,3 +1122,4 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
 /* the brief form never gets wider than the screen: on Android a select can ask for the width of its longest option */
 .cta-grid > *, .form, .form > *, .f2 > * { min-width: 0; }
 .fld select { min-width: 0; max-width: 100%; text-overflow: ellipsis; }
+@media (max-width: 760px) { .ft p[data-i18n="ft.loc"] { font-size: .8125rem; line-height: 1.5; } } /* phones: the footer location line smaller */
