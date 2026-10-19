@@ -226,7 +226,7 @@ html.js .rise-in { opacity: 0; transform: translateY(24px); animation: rise 1s v
 .sv-terms span { color: var(--mute); font-size: .9375rem; line-height: 1.5; }
 /* ---------- services: tabs on top, photo + details below ---------- */
 .sx { margin-top: clamp(28px, 3.5vw, 48px); border-top: 1px solid var(--graphite); }
-.sx-tabs { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.sx-tabs { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
 .sx-tab { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 16px 14px 16px 0; border: 0; background: none; text-align: left; color: var(--mute); font-size: .875rem; font-weight: 600; line-height: 1.3; letter-spacing: -.005em; transition: color .3s var(--ease); }
 .sx-tab .num { font-size: .75rem; letter-spacing: .04em; color: var(--brown-d); }
 .sx-tab::after { content: ""; position: absolute; left: 0; right: 14px; bottom: -1px; height: 2px; background: var(--brown); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
@@ -1141,4 +1141,30 @@ html[data-theme="dark"] .svc-card--fit .svc-img { background: #fff; }
   .ab-who .prj-head > div { order: 1; }
   .ab-who .ab-cards { order: 2; }
   .ab-who .prj-head > .btn { order: 3; align-self: flex-start; margin-top: 24px; }
+}
+/* 3D modeling page: the model video on the left and four of its views on the right; model → rendering wipes below;
+   empty frames (.mdl-ph) stand in until Svetlana's files arrive */
+.mdl-show { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(10px, 1.4vw, 18px); margin-top: clamp(28px, 3.5vw, 48px); }
+.mdl-vid { border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 3; background: #e6e1d9; }
+.mdl-vid video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mdl-views { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 18px); }
+.mdl-views .pg-item { aspect-ratio: 4 / 3; }
+.mdl-views .pg-item img { height: 100%; object-fit: cover; }
+.mdl-ph { background: #e6e1d9; border-radius: var(--r); }
+.mdl-views .mdl-ph { aspect-ratio: 4 / 3; }
+.svc-img--ph { background: #e6e1d9; }
+.mdl-pairs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 18px); margin-top: clamp(16px, 2vw, 24px); }
+.cmp-ph { aspect-ratio: 3 / 2; }
+html[data-theme="dark"] .mdl-ph, html[data-theme="dark"] .svc-img--ph, html[data-theme="dark"] .mdl-vid { background-color: #2a2725; }
+@media (max-width: 760px) { .mdl-show, .mdl-pairs { grid-template-columns: 1fr; } }
+.mdl-ex { margin-top: clamp(16px, 2vw, 24px); }
+.mdl-ex .mw-chips { margin-bottom: clamp(12px, 1.6vw, 20px); }
+.mdl-ex .mdl-show { margin-top: 0; }
+.mdl-show[hidden] { display: none; }
+.sx-sl--ph { cursor: default; }
+/* phones: the model buttons are one row that scrolls sideways */
+@media (max-width: 760px) {
+  .mdl-ex .mw-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+  .mdl-ex .mw-chips::-webkit-scrollbar { display: none; }
+  .mdl-ex .mw-chip { flex: none; white-space: nowrap; padding: 8px 14px; font-size: .8125rem; }
 }
