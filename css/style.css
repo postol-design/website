@@ -1350,3 +1350,9 @@ html[data-theme="dark"] .bf-faq { background: #1f1d1c; }
 #bf-form { scroll-margin-top: calc(var(--bfbar) + 68px); }
 .bf-form .bf-formtag { margin-bottom: 4px; }
 @media (max-width: 760px) { .bf-gifts { row-gap: 48px; } } /* phones: the two gifts read as separate blocks */
+/* Black Friday: the examples are labelled as sample calculations */
+.bf-off .bf-exl { margin-top: auto; padding-top: 14px; font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); }
+.bf-off--main .bf-exl { color: #a59d94; }
+.bf-off .bf-exl + .bf-ex { margin-top: 4px; padding-top: 0; }
+.bf-off--main .bf-ex2 { color: var(--beige); }
+.bf-off--main .bf-ex2 b { color: var(--brown); }
