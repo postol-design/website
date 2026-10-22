@@ -206,6 +206,14 @@
     'r1q': '«Спасибо, Светлана! Вау, это потрясающе.»', 'r1s': 'Директор, лицензированный проектировщик зданий · Австралия', 'r2s': 'Главный дизайнер · Вашингтон, США', 'r3s': 'Главный дизайнер · Лос-Анджелес, США',
     'r2q': '«Всё выглядит потрясающе! Спасибо, что поделились своим талантом и сделали всё возможное, чтобы успеть вовремя. Очень ценю это и с нетерпением жду новой работы вместе.»',
     'r3q': '«Добавлю, что работа над этими эскизами с вами действительно помогла мне доработать дизайн: увидеть, что не работает и что нужно добавить или убрать…»',
+    'r4q': '«Вчера я встретилась с клиенткой и показала ей вашу первую визуализацию. Она в восторге! В итоге она утвердила весь дизайн — это было очень волнующе.»', 'r4s': 'Главный дизайнер · Калифорния, США',
+    'r5q': '«Это просто идеально. Огромное спасибо! Вы очень талантливы. Жду следующего раза!»', 'r5s': 'Главный дизайнер · Лос-Анджелес, США',
+    'r6q': '«Большое спасибо, выглядит прекрасно! Было здорово работать с вами, и я обязательно обращусь к вам с новыми проектами!»', 'r6s': 'Дизайнер, Emily Moss Designs · Флорида, США',
+    'r7q': '«Спасибо, что сделали это так быстро. Выглядит просто отлично!»', 'r7s': 'Главный дизайнер · Канада',
+    'r8q': '«И аксонометрия, и столовая выглядят отлично! Большое спасибо за прекрасную работу!»', 'r8s': 'Дизайнер, Emily Moss Designs · Флорида, США',
+    'r9q': '«Всё получается так красиво.»', 'r9s': 'Главный дизайнер · Канада',
+    'r10q': '«Спасибо. На первый взгляд выглядит очень хорошо.»', 'r10s': 'Главный дизайнер · Иллинойс, США',
+    'r11q': '«Выглядит отлично, спасибо!»', 'r11s': 'Главный дизайнер · Вашингтон (округ Колумбия), США',
     'about.label': '[ Обо мне ]', 'about.btn': 'Подробнее обо мне',
     'about.h2': 'Кто стоит за ' + I('визуализацией'),
     'about.p1': 'Меня зовут Светлана Постол. Я интерьерный и архитектурный визуализатор из Украины и работаю с дизайнерами и архитекторами по всему миру, чаще всего из США, Великобритании, Канады и Австралии.',
@@ -641,6 +649,17 @@
 
   /* ---------- reviews: "view original" opens the email screenshot ---------- */
   $$('.rvw-orig').forEach(function (b) { b.addEventListener('click', function () { lbOpenList([b], 0); }); });
+  /* reviews slider: arrows move one card; after the last card "next" goes back to the first, before the first "prev" goes to the end */
+  $$('.rvw').forEach(function (s) {
+    var g = s.querySelector('.rvw-grid'), c = s.querySelector('.sv-cnt'), it = g && g.querySelectorAll('.rvw-item');
+    if (!g || !c || it.length < 2) return;
+    function step() { return it[1].offsetLeft - it[0].offsetLeft; }
+    function paint() { var i = Math.round(g.scrollLeft / step()), per = Math.max(1, Math.round(g.clientWidth / step())); i = Math.min(i, it.length - per); c.textContent = (i + 1) + (per > 1 ? '–' + (i + per) : '') + ' / ' + it.length; }
+    s.querySelector('.sv-next').addEventListener('click', function () { if (g.scrollLeft + g.clientWidth >= g.scrollWidth - 4) g.scrollTo({ left: 0, behavior: 'smooth' }); else g.scrollBy({ left: step(), behavior: 'smooth' }); });
+    s.querySelector('.sv-prev').addEventListener('click', function () { if (g.scrollLeft <= 4) g.scrollTo({ left: g.scrollWidth, behavior: 'smooth' }); else g.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    var raf = 0; g.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(function () { raf = 0; paint(); }); }, { passive: true });
+    window.addEventListener('resize', paint); paint();
+  });
   /* About: a video cover turns into the player on click (nothing is downloaded before that) */
   $$('.mk-vid').forEach(function (b) {
     b.addEventListener('click', function () {

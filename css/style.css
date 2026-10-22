@@ -1360,3 +1360,11 @@ main { display: flow-root; } /* the first block's top margin stays inside main, 
 /* the EN/RU switch lives only in the footer (Svetlana's request): hidden in the header and the mobile menu */
 .hdr-r .lang, .mm-foot .lang { display: none; }
 .mm-foot .mm-row:has(> .btn) { justify-content: flex-start; }
+
+/* reviews: a row of 11 cards, 3 on screen, arrows + counter above (main.js) */
+.rvw-nav { display: flex; justify-content: flex-end; align-items: center; gap: 14px; margin-top: clamp(20px, 2.4vw, 32px); }
+.rvw-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-top: clamp(20px, 2.4vw, 32px); }
+.rvw-grid::-webkit-scrollbar { display: none; }
+.rvw-grid > .rvw-item { flex: none; width: calc((100% - 2 * clamp(24px, 3.4vw, 48px)) / 3); scroll-snap-align: start; }
+@media (max-width: 1000px) { .rvw-grid > .rvw-item { width: min(380px, 84%); } }
+@media (max-width: 760px) { .rvw-nav { margin-top: 16px; } .rvw-grid { margin-top: 16px; } }
