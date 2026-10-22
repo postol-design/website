@@ -1357,3 +1357,6 @@ html[data-theme="dark"] .bf-faq { background: #1f1d1c; }
 .bf-off--main .bf-ex2 { color: var(--beige); }
 .bf-off--main .bf-ex2 b { color: var(--brown); }
 main { display: flow-root; } /* the first block's top margin stays inside main, so main's white covers the area under the header (the sticky footer showed through on case pages) */
+/* the EN/RU switch lives only in the footer (Svetlana's request): hidden in the header and the mobile menu */
+.hdr-r .lang, .mm-foot .lang { display: none; }
+.mm-foot .mm-row:has(> .btn) { justify-content: flex-start; }
