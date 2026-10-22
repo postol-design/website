@@ -1349,3 +1349,4 @@ html[data-theme="dark"] .bf-faq { background: #1f1d1c; }
 .bf-form .form { border: 1px solid var(--line); }
 #bf-form { scroll-margin-top: calc(var(--bfbar) + 68px); }
 .bf-form .bf-formtag { margin-bottom: 4px; }
+@media (max-width: 760px) { .bf-gifts { row-gap: 48px; } } /* phones: the two gifts read as separate blocks */
