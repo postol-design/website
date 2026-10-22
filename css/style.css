@@ -1168,3 +1168,184 @@ html[data-theme="dark"] .mdl-ph, html[data-theme="dark"] .svc-img--ph, html[data
   .mdl-ex .mw-chips::-webkit-scrollbar { display: none; }
   .mdl-ex .mw-chip { flex: none; white-space: nowrap; padding: 8px 14px; font-size: .8125rem; }
 }
+/* ---------- Black Friday 2026 (black-friday.html, the menu item, the home strip); main.js sets html.bf-pre / bf-on / bf-off ---------- */
+.nav-bf { display: inline-flex; align-items: center; gap: 6px; color: var(--brown-d); }
+.bf-i { width: 16px; height: 16px; flex: none; }
+.mmenu nav a.nav-bf { display: flex; gap: 10px; color: var(--brown-d); }
+.mmenu nav a.nav-bf .bf-i { width: 22px; height: 22px; }
+html.bf-off .nav-bf, html.bf-off .bf-strip { display: none; }
+.bf-strip { display: block; overflow: hidden; background: var(--graphite); color: var(--white); padding: 12px 0; }
+.bf-track { display: flex; width: max-content; animation: ft-run 45s linear infinite; }
+.bf-track span { flex: none; padding-right: 2.5em; font-size: .8125rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.bf-strip:hover .bf-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .bf-track { animation: none; } }
+.bf-hero { max-width: 880px; }
+.bf-dates { margin-top: 18px; font-size: clamp(1.0625rem, 1.4vw, 1.25rem); line-height: 1.5; }
+.bf-dates > b { display: block; font-size: clamp(1.375rem, 2.2vw, 1.875rem); letter-spacing: -.015em; color: var(--brown-d); }
+.bf-timer { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 24px; margin-top: 28px; padding: 18px 22px; border-radius: var(--r); background: var(--graphite); color: var(--white); width: fit-content; max-width: 100%; }
+.bf-tl { font-size: .8125rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--beige); }
+.bf-tc { display: flex; gap: 18px; }
+.bf-tc span { display: flex; flex-direction: column; align-items: center; min-width: 44px; }
+.bf-tc b { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.bf-tc small { margin-top: 4px; font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; color: var(--beige); }
+html.bf-off .bf-tc { display: none; }
+.bf-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 24px; }
+.bf-only-pre, .bf-only-on, .bf-only-off { display: none !important; }
+html.bf-pre .bf-only-pre, html.bf-on .bf-only-on, html.bf-off .bf-only-off { display: inline-flex !important; }
+.bf-ended { margin: 0; color: var(--mute); }
+.bf-offers { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); margin-top: clamp(36px, 4.5vw, 56px); }
+.bf-off { display: flex; flex-direction: column; gap: 8px; padding: clamp(20px, 2.4vw, 28px); border: 1px solid var(--line); border-radius: var(--r); background: var(--white); }
+.bf-off--main { background: var(--graphite); color: var(--white); border-color: var(--graphite); }
+.bf-tag { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brown-d); }
+.bf-off--main .bf-tag { color: var(--brown); }
+.bf-pct { font-size: clamp(2.75rem, 5vw, 4rem); font-weight: 600; line-height: 1; letter-spacing: -.03em; }
+.bf-off > p { margin: 0; font-size: 1rem; line-height: 1.45; }
+.bf-gift { display: flex; gap: 10px; align-items: flex-start; margin-top: 6px; padding-top: 12px; border-top: 1px solid var(--line); font-weight: 600; line-height: 1.45; }
+.bf-off--main .bf-gift { border-top-color: rgba(255, 255, 255, .2); }
+.bf-gift .bf-i { width: 20px; height: 20px; margin-top: 1px; color: var(--brown); }
+.bf-off .bf-ex { margin-top: auto; padding-top: 10px; font-size: .9375rem; color: var(--mute); }
+.bf-off--main .bf-ex { color: var(--beige); }
+.bf-ex s { opacity: .7; }
+.bf-ex b { color: var(--brown-d); font-weight: 700; }
+.bf-off--main .bf-ex b { color: var(--brown); }
+.bf-gifts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); margin-top: clamp(16px, 2vw, 24px); }
+.bf-gifts figure { margin: 0; }
+.bf-gifts img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r); background: #e6e1d9; }
+.bf-gifts .bf-fit img { object-fit: contain; background: #fff; border: 1px solid var(--line); padding: 4%; }
+.bf-gifts figcaption { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; }
+.bf-gifts figcaption b { font-size: 1.125rem; }
+.bf-gifts figcaption span { color: var(--mute); font-size: .9375rem; line-height: 1.5; }
+.bf-quotes { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); margin-top: clamp(16px, 2vw, 24px); }
+.bf-quotes li { display: flex; flex-direction: column; justify-content: space-between; gap: 14px; padding: clamp(20px, 2.4vw, 28px); border-radius: var(--r); background: var(--white); border: 1px solid var(--line); }
+.bf-quotes blockquote { margin: 0; font-size: 1rem; line-height: 1.55; }
+.bf-quotes p { margin: 0; font-size: .875rem; color: var(--mute); }
+.bf-quotes p b { color: var(--graphite); }
+.bf-formtag { margin: 0; padding: 10px 14px; border-radius: var(--r); background: var(--graphite); color: var(--white); font-size: .875rem; font-weight: 600; }
+html[data-theme="dark"] .bf-off:not(.bf-off--main), html[data-theme="dark"] .bf-quotes li { background: #22201f; }
+@media (max-width: 1000px) { .bf-offers, .bf-quotes { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .bf-gifts { grid-template-columns: 1fr; }
+  .bf-timer { width: 100%; justify-content: center; padding: 16px; }
+  .bf-tc { gap: 12px; }
+  .bf-strip { padding: 10px 0; }
+  .bf-track span { font-size: .75rem; }
+}
+/* Black Friday header: centered, on the same dot grid as the home hero */
+.bf-top { position: relative; isolation: isolate; overflow: hidden; padding: calc(68px + clamp(48px, 7vw, 104px)) 0 clamp(48px, 7vw, 96px); background: linear-gradient(180deg, #fbfaf8 0%, #f0ebe3 55%, #e9e2d7 100%); }
+html[data-theme="dark"] .bf-top { background: linear-gradient(180deg, #1d1b1a 0%, #191716 55%, #151312 100%); }
+.bf-dots { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.bf-top .bf-hero { max-width: 900px; margin-inline: auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.bf-top .bf-timer, .bf-top .bf-cta { justify-content: center; }
+.bf-top .bf-cta { width: 100%; }
+.bf-top + .bf { padding-top: clamp(40px, 5vw, 64px); }
+.bf-top + .bf .bf-offers { margin-top: 0; }
+/* Black Friday "Recent work": three, then two, then the two wide upper-floor views */
+.pg-grid--bf { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.pg-grid--bf .pg-item { grid-column: span 2; aspect-ratio: 4 / 3; }
+.pg-grid--bf .pg-item:nth-child(n+4) { grid-column: span 3; }
+.pg-grid--bf .pg-item:nth-child(n+6) { aspect-ratio: 2 / 1; }
+.pg-grid--bf .pg-item img { height: 100%; object-fit: cover; }
+@media (max-width: 760px) {
+  .pg-grid--bf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pg-grid--bf .pg-item, .pg-grid--bf .pg-item:nth-child(n+4) { grid-column: span 1; }
+  .pg-grid--bf .pg-item:nth-child(n+6), .pg-grid--bf .pg-item:first-child { grid-column: 1 / -1; }
+}
+/* Black Friday header, dark: graphite with a warm glow, floating gifts (Svetlana's PNGs, images/bf/) and falling gold confetti (canvas, main.js) */
+body[data-page="blackfriday"] .site-header { background: rgba(255, 255, 255, .93); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
+html[data-theme="dark"] body[data-page="blackfriday"] .site-header { background: rgba(24, 22, 21, .92); }
+.bf-top, html[data-theme="dark"] .bf-top { background: radial-gradient(ellipse 60% 55% at 50% 45%, #3a3430 0%, #24211f 55%, #171514 100%); color: #f3efe9; }
+.bf-top .label { color: var(--brown); }
+.bf-top .h2 { color: #fff; }
+.bf-top .bf-dates { color: #d9d2c8; }
+.bf-top .bf-dates > b, .bf-top .bf-dates b { color: #d8a978; }
+.bf-top .bf-timer { background: rgba(255, 255, 255, .06); border: 1px solid rgba(216, 169, 120, .35); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.bf-top .bf-ended { color: #cfc7bc; }
+.bf-top .btn--line { color: #fff; border-color: rgba(255, 255, 255, .5); }
+.bf-confetti { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.bf-gifts-fly { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.bf-top .wrap { position: relative; z-index: 1; }
+.bfg { position: absolute; height: auto; animation: bf-float var(--d, 8s) ease-in-out var(--dl, 0s) infinite alternate; }
+.bfg1 { width: clamp(150px, 15vw, 240px); left: 4%; top: 22%; --r0: -8deg; --r1: 4deg; --d: 7s; }
+.bfg2 { width: clamp(110px, 11vw, 180px); right: 6%; top: 18%; --r0: 10deg; --r1: -2deg; --d: 9s; --dl: -2s; filter: blur(2px); opacity: .9; }
+.bfg3 { width: clamp(80px, 8vw, 130px); left: 15%; bottom: 8%; --r0: 6deg; --r1: -10deg; --d: 10s; --dl: -4s; filter: blur(4px); opacity: .75; }
+.bfg4 { width: clamp(150px, 16vw, 250px); right: 3%; bottom: 6%; --r0: -4deg; --r1: 7deg; --d: 8s; --dl: -1s; }
+.bfg5 { width: clamp(60px, 6vw, 95px); left: 27%; top: 15%; --r0: -14deg; --r1: 6deg; --d: 11s; --dl: -6s; filter: blur(6px); opacity: .55; }
+@keyframes bf-float { from { transform: translateY(-14px) rotate(var(--r0)); } to { transform: translateY(16px) rotate(var(--r1)); } }
+@media (prefers-reduced-motion: reduce) { .bfg { animation: none; transform: rotate(var(--r0)); } }
+@media (max-width: 900px) { .bfg3, .bfg5 { display: none; } }
+@media (max-width: 760px) {
+  .bf-top { padding-bottom: clamp(140px, 36vw, 190px); }
+  .bfg1 { width: 92px; left: -14px; top: auto; bottom: 22px; }
+  .bfg2 { width: 70px; right: 6px; top: 86px; opacity: .7; }
+  .bfg4 { width: 104px; right: -10px; bottom: 14px; }
+}
+/* Black Friday strip above the menu on every page: fixed at the very top, the header sits under it (--bfbar);
+   gone after the offer (html.bf-off) */
+:root { --bfbar: 34px; }
+html.bf-off { --bfbar: 0px; }
+.bf-strip { position: fixed; inset: 0 0 auto 0; z-index: 101; height: var(--bfbar); padding: 0; display: flex; align-items: center; background: #111; color: #f3d9a4; }
+.bf-track span { font-size: .75rem; }
+.site-header { top: var(--bfbar); }
+body { padding-top: var(--bfbar); }
+.mmenu { top: var(--bfbar); }
+@media (max-width: 760px) { :root { --bfbar: 30px; } html.bf-off { --bfbar: 0px; } .bf-strip { padding: 0; } .bf-track span { font-size: .6875rem; } }
+/* the menu item is a black pill */
+.nav .nav-bf { padding: 6px 14px 6px 11px; border-radius: 999px; background: #111; color: #f3d9a4; }
+.nav .nav-bf::after { display: none; }
+.nav .nav-bf:hover { background: var(--brown-d); color: #fff; }
+.mmenu nav a.nav-bf { align-self: flex-start; padding: 8px 18px 8px 14px; margin: 6px 0; border: 0; border-radius: 999px; background: #111; color: #f3d9a4; font-size: 1.125rem; }
+html[data-theme="dark"] .nav .nav-bf, html[data-theme="dark"] .mmenu nav a.nav-bf { background: #f3d9a4; color: #111; }
+/* Black Friday gifts: smaller, seven of them */
+.bfg1 { width: clamp(100px, 10vw, 165px); left: 5%; top: 20%; }
+.bfg2 { width: clamp(80px, 7.5vw, 125px); right: 7%; top: 14%; }
+.bfg3 { width: clamp(60px, 5.5vw, 90px); left: 17%; bottom: 10%; }
+.bfg4 { width: clamp(105px, 10.5vw, 170px); right: 5%; bottom: 8%; }
+.bfg5 { width: clamp(46px, 4.2vw, 70px); left: 28%; top: 12%; }
+.bfg6 { width: clamp(50px, 4.6vw, 76px); right: 25%; bottom: 12%; --r0: 12deg; --r1: -6deg; --d: 9.5s; --dl: -3s; filter: blur(5px); opacity: .6; }
+.bfg7 { width: clamp(56px, 5vw, 84px); left: 2%; bottom: 14%; --r0: -10deg; --r1: 8deg; --d: 10.5s; --dl: -5s; filter: blur(3px); opacity: .75; }
+@media (max-width: 900px) { .bfg6, .bfg7 { display: none; } }
+@media (max-width: 760px) { .bfg1 { width: 74px; } .bfg2 { width: 56px; } .bfg4 { width: 84px; } }
+.bf-slots { margin: 16px 0 0; font-size: .9375rem; color: #cfc7bc; }
+.bf-slots b { color: #f3d9a4; }
+html.bf-off .bf-hide-off { display: none; }
+.bf-off .bf-ex2 { margin: 2px 0 0; font-size: .9375rem; color: var(--mute); }
+.bf-ex2 s { opacity: .7; }
+.bf-ex2 b { color: var(--brown-d); }
+.bf-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .bf-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.steps5 span b, .ab-why-grid span b { font-size: inherit; line-height: inherit; letter-spacing: 0; color: var(--graphite); }
+.bf-steps { border-top: 0; margin-top: clamp(16px, 2vw, 24px); } .bf-steps li { padding-top: 0; }
+/* Black Friday: "How to claim" and "Terms" as subheadings; Terms on a light gray band instead of lines */
+.bf-sub { font-size: clamp(1.375rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: -.015em; text-transform: none; line-height: 1.2; }
+.bf-terms { background: var(--gray); }
+.bf-terms .bf-sub { border-top: 0; margin-top: 0; padding-top: 0; }
+.bf-terms .fp-rules { margin-top: clamp(14px, 1.8vw, 22px); }
+.bf-after { padding-top: clamp(48px, 6vw, 80px); }
+.bf-after > .wrap > .svp-group:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+html[data-theme="dark"] .bf-terms { background: #1f1d1c; }
+/* Black Friday: "How to claim" in a gray rounded box; Terms and FAQ in the home FAQ layout (heading left, content right) */
+.bf-claim { margin-top: clamp(36px, 4.5vw, 56px); padding: clamp(22px, 3vw, 40px); border-radius: var(--r); background: var(--gray); }
+.bf-claim .bf-sub { margin: 0; }
+.bf-claim .bf-steps { margin-top: clamp(16px, 2vw, 24px); border-top: 0; }
+html[data-theme="dark"] .bf-claim { background: #1f1d1c; }
+.bf-terms .faq .fp-rules { margin-top: 0; max-width: none; border-top: 1px solid var(--line); }
+.bf-terms .faq .fp-rules li { grid-template-columns: 180px minmax(0, 1fr); }
+@media (max-width: 900px) { .bf-terms .faq .fp-rules li { grid-template-columns: 1fr; gap: 2px; } }
+/* Black Friday spacing: no separator lines above the section headings, more air between blocks */
+.bf .svp-group--h { border-top: 0; padding-top: 0; margin-top: clamp(64px, 8vw, 112px); }
+.bf .bf-gifts { margin-top: clamp(20px, 2.4vw, 32px); }
+.bf .bf-gifts figcaption { padding-top: 18px; }
+.bf .pg-grid { margin-top: clamp(20px, 2.4vw, 32px); }
+.bf .bf-quotes { margin-top: clamp(20px, 2.4vw, 32px); }
+.bf .faq { margin-top: clamp(72px, 9vw, 128px); }
+/* Black Friday: button in the claim box, links under the gifts, FAQ on the beige band, the brief form at the end */
+.bf-claim-cta { display: flex; margin-top: clamp(20px, 2.4vw, 28px); }
+.bf-glink { align-self: flex-start; margin-top: 8px; font-size: .9375rem; font-weight: 600; color: var(--brown-d); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.bf-glink:hover { color: var(--graphite); }
+.bf-faq { background: var(--gray); }
+.bf .bf-faq .faq, .bf-faq .faq { margin-top: 0; }
+html[data-theme="dark"] .bf-faq { background: #1f1d1c; }
+.bf-form { background: var(--white); }
+.bf-form .form { border: 1px solid var(--line); }
+#bf-form { scroll-margin-top: calc(var(--bfbar) + 68px); }
+.bf-form .bf-formtag { margin-bottom: 4px; }

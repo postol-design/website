@@ -97,9 +97,9 @@ window.PROJECTS = [
     type: { en: 'Interior renderings · Floor plan', ru: 'Интерьерные визуализации · План' },
     client: 'Patrick · Interior designer', location: { en: 'Los Angeles, USA', ru: 'Лос-Анджелес, США' },
     // Svetlana built the 3D model and reworked the floor plan to the designer's specification
-    role: { en: 'The 3D model, the floor plan reworked to match the specification, four interior views and a 2D plan, finished by hand in Procreate', ru: '3D-модель, план этажа, доработанный под спецификацию, четыре интерьерных вида и 2D-план, прорисованные вручную в Procreate' },
+    role: { en: 'The 3D model, the floor plan reworked to match the specification, four interior views and a 2D floor plan, finished by hand in Procreate', ru: '3D-модель, план этажа, доработанный под спецификацию, четыре интерьерных вида и 2D-план этажа, прорисованные вручную в Procreate' },
     facts: [
-      [{ en: 'Views', ru: 'Виды' }, { en: '4 interior views (primary bedroom, great room, guest room, dining room) + a 2D floor plan', ru: '4 интерьерных вида (главная спальня, гостиная, гостевая, столовая) + 2D-план' }],
+      [{ en: 'Views', ru: 'Виды' }, { en: '4 interior views (primary bedroom, great room, guest room, dining room) + a 2D floor plan', ru: '4 интерьерных вида (главная спальня, гостиная, гостевая, столовая) + 2D-план этажа' }],
       [{ en: 'Supplied', ru: 'Прислано' }, { en: 'A CAD plan set with wall elevations, renderings and furniture mockups', ru: 'Пакет чертежей в CAD с развёртками стен, рендеры и мудборды с мебелью' }],
       [{ en: 'Delivered', ru: 'Срок' }, { en: '16 days', ru: '16 дней' }],
       [{ en: 'Revisions', ru: 'Правки' }, { en: 'Many rounds beyond the two included, ordered as extras', ru: 'Много кругов сверх двух включённых, оплачены отдельно' }]
