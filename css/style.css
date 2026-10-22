@@ -1356,3 +1356,4 @@ html[data-theme="dark"] .bf-faq { background: #1f1d1c; }
 .bf-off .bf-exl + .bf-ex { margin-top: 4px; padding-top: 0; }
 .bf-off--main .bf-ex2 { color: var(--beige); }
 .bf-off--main .bf-ex2 b { color: var(--brown); }
+main { display: flow-root; } /* the first block's top margin stays inside main, so main's white covers the area under the header (the sticky footer showed through on case pages) */
