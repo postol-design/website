@@ -51,14 +51,15 @@
   var n = 0, num = function () { n++; return (n < 10 ? '0' : '') + n; };
   var html = '';
 
-  // hero, with a way back to all projects right under the header
+  // hero, with breadcrumbs (Home / Portfolio / project) right under the header
   var arrowL = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M6.5 3.5 2 8l4.5 4.5"/></svg>';
+  var crumbs = '<nav class="crumbs crumbs--flow" aria-label="Breadcrumb"><ol><li><a href="./" data-i18n="nav.home">Home</a></li><li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li><li aria-current="page">' + t('title', p.title) + '</li></ol></nav>';
   var back = '<a class="pg-back" href="portfolio.html">' + arrowL + '<span data-i18n="pg.back">All projects</span></a>';
   var cover = p.finals ? src(p.finals[0]) : p.finalsAbs[0];
   // case studies: smaller WebP copies of the hero in images/w/ (the original stays the fallback)
   var w = p.intro && p.finals ? 'images/w/projects-' + p.slug + '-' + p.finals[0] : '';
   var heroSet = w ? ' srcset="' + w + '-1000.webp 1000w, ' + w + '-2000.webp 2000w" sizes="100vw"' : '';
-  html += '<div class="wrap pg-bar">' + back + '</div>' +
+  html += '<div class="wrap pg-bar">' + crumbs + '</div>' +
     '<section class="pg-hero"><img src="' + cover + '"' + heroSet + ' alt="' + esc(title) + '" fetchpriority="high"><div class="pg-hero-cap wrap">' +
     '<span class="label">[ ' + t('type', p.type) + ' ]</span><h1 class="pg-title">' + t('title', p.title) + '</h1>' +
     (p.client ? '<p class="pg-client">' + (p.clientUrl ? '<a href="' + p.clientUrl + '" target="_blank" rel="noopener noreferrer">' + esc(p.client) + '</a>' : esc(p.client)) + (p.location ? ' · ' + t('loc', p.location) : '') + '</p>' : '') +

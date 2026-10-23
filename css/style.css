@@ -1368,3 +1368,14 @@ main { display: flow-root; } /* the first block's top margin stays inside main, 
 .rvw-grid > .rvw-item { flex: none; width: calc((100% - 2 * clamp(24px, 3.4vw, 48px)) / 3); scroll-snap-align: start; }
 @media (max-width: 1000px) { .rvw-grid > .rvw-item { width: min(380px, 84%); } }
 @media (max-width: 760px) { .rvw-nav { margin-top: 16px; } .rvw-grid { margin-top: 16px; } }
+
+/* breadcrumbs under the header on inner pages: over the first block's top padding (cases: in .pg-bar, in the flow) */
+.crumbs { position: absolute; left: 0; right: 0; top: calc(68px + clamp(14px, 2vw, 24px)); z-index: 2; }
+.crumbs--flow { position: static; }
+.crumbs ol { display: flex; flex-wrap: wrap; row-gap: 4px; margin-block: 0; list-style: none; font-size: .75rem; font-weight: 600; letter-spacing: .08em; line-height: 1.4; text-transform: uppercase; color: var(--mute); }
+.crumbs--flow ol { padding: 0; }
+.crumbs li + li::before { content: "/"; margin-inline: 10px; opacity: .55; }
+.crumbs a { transition: color .3s var(--ease); }
+.crumbs a:hover { color: var(--brown-d); }
+.crumbs [aria-current] { color: var(--graphite); }
+@media (max-width: 760px) { .crumbs ol { font-size: .6875rem; } .crumbs li + li::before { margin-inline: 7px; } }
