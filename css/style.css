@@ -788,7 +788,7 @@ img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -we
 .pg-grid--whole .pg-item { background: #fff; padding: clamp(8px, 1vw, 14px); border: 1px solid rgba(39, 37, 36, .12); }
 .pg-grid--whole .pg-item img { object-fit: contain; }
 .svp-group + .pg-grid { margin-top: clamp(20px, 2.6vw, 32px); }
-#more { scroll-margin-top: 96px; } /* below the fixed header when opened as portfolio.html#more */
+#more { scroll-margin-top: calc(var(--bfbar, 0px) + 96px); } /* below the fixed header when opened as portfolio.html#more */
 /* header: "Services & Pricing" opens a small menu with the two service pages (hover or keyboard focus) */
 .nav-dd { position: relative; display: flex; align-items: center; }
 .nav-dd > a { display: inline-flex; align-items: center; gap: 5px; }
@@ -1379,3 +1379,8 @@ main { display: flow-root; } /* the first block's top margin stays inside main, 
 .crumbs a:hover { color: var(--brown-d); }
 .crumbs [aria-current] { color: var(--graphite); }
 @media (max-width: 760px) { .crumbs ol { font-size: .6875rem; } .crumbs li + li::before { margin-inline: 7px; } }
+
+/* portfolio: "More work below" under the case studies (the reviews sit between them); its arrow points down and does not turn */
+.pf-jump .btn:hover .ico { transform: none; }
+.pf-more { padding-top: clamp(56px, 7vw, 104px); }
+.pf-more #more { margin-top: 0; }

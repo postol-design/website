@@ -29,7 +29,7 @@
     // about
     'ab.lead': 'Я Светлана Постол, визуализатор интерьеров и архитектуры. Работаю удалённо из Украины с дизайнерами интерьера и архитекторами по всему миру, чаще всего из США, Великобритании, Канады и Австралии.',
     // portfolio
-    'pf.g1': 'Кейсы', 'pf.g2': 'Другие <span class="ital">работы</span>', 'mw.lead': 'Отдельные виды и планы, заказанные по одному. Выберите категорию и нажмите на изображение, чтобы рассмотреть его.', 'mw.all': 'Все', 'mw.more': 'Смотреть ещё', 'mw.kitchen': 'Кухни и столовые', 'mw.bath': 'Ванные', 'mw.bedroom': 'Спальни', 'mw.living': 'Гостиные', 'mw.kids': 'Детские', 'mw.office': 'Прихожие и кабинеты', 'mw.commercial': 'Коммерческие', 'mw.plan': 'Планы', 'mw.axo': 'Аксонометрия', 'mw.exterior': 'Экстерьеры', 'pf.rel': 'Услуга:',
+    'pf.jump': 'Другие работы ниже', 'pf.g1': 'Кейсы', 'pf.g2': 'Другие <span class="ital">работы</span>', 'mw.lead': 'Отдельные виды и планы, заказанные по одному. Выберите категорию и нажмите на изображение, чтобы рассмотреть его.', 'mw.all': 'Все', 'mw.more': 'Смотреть ещё', 'mw.kitchen': 'Кухни и столовые', 'mw.bath': 'Ванные', 'mw.bedroom': 'Спальни', 'mw.living': 'Гостиные', 'mw.kids': 'Детские', 'mw.office': 'Прихожие и кабинеты', 'mw.commercial': 'Коммерческие', 'mw.plan': 'Планы', 'mw.axo': 'Аксонометрия', 'mw.exterior': 'Экстерьеры', 'pf.rel': 'Услуга:',
     'pf.upper-floor-australia.d': '4 интерьерных вида: холл с барной нишей, мастер-ванная, гардеробная и кабинет. Прислано: собственная 3D-модель дизайнера с четырьмя ракурсами и бриф с отделкой.',
     'pf.growing-scope.d': '3 интерьерных вида и 2 аксонометрии по одной 3D-модели, которую построила я; одна визуализация выросла в пять, срок — 12 дней. Прислано: концепт-план, фото комнат, доска материалов и спецификация.',
     'pf.exterior-to-interior.d': '2D-планы обоих этажей и экстерьер, затем аксонометрия и дополнительный интерьерный ракурс. Прислано: SketchUp-модель дизайнера и презентация отделки.',
@@ -654,11 +654,11 @@
     var g = s.querySelector('.rvw-grid'), c = s.querySelector('.sv-cnt'), it = g && g.querySelectorAll('.rvw-item');
     if (!g || !c || it.length < 2) return;
     function step() { return it[1].offsetLeft - it[0].offsetLeft; }
-    function paint() { var i = Math.round(g.scrollLeft / step()), per = Math.max(1, Math.round(g.clientWidth / step())); i = Math.min(i, it.length - per); c.textContent = (i + 1) + (per > 1 ? '–' + (i + per) : '') + ' / ' + it.length; }
+    function paint() { var i = Math.round(g.scrollLeft / step()), per = Math.max(1, Math.floor((g.clientWidth + step() - it[0].offsetWidth) / step() + 0.05)); i = Math.min(i, it.length - per); c.textContent = (i + 1) + (per > 1 ? '–' + (i + per) : '') + ' / ' + it.length; }
     s.querySelector('.sv-next').addEventListener('click', function () { if (g.scrollLeft + g.clientWidth >= g.scrollWidth - 4) g.scrollTo({ left: 0, behavior: 'smooth' }); else g.scrollBy({ left: step(), behavior: 'smooth' }); });
     s.querySelector('.sv-prev').addEventListener('click', function () { if (g.scrollLeft <= 4) g.scrollTo({ left: g.scrollWidth, behavior: 'smooth' }); else g.scrollBy({ left: -step(), behavior: 'smooth' }); });
     var raf = 0; g.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(function () { raf = 0; paint(); }); }, { passive: true });
-    window.addEventListener('resize', paint); paint();
+    window.addEventListener('resize', paint); window.addEventListener('load', paint); paint();
   });
   /* About: a video cover turns into the player on click (nothing is downloaded before that) */
   $$('.mk-vid').forEach(function (b) {
